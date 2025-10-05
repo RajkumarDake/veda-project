@@ -1,0 +1,1162 @@
+{
+  "articles": [
+    {
+      "filename": "lomark_daily_alvarez_positive.txt",
+      "content": "Alvarez PLC has been recognized for its outstanding commitment to sustainable fishing practices. The company's recent investments in eco-friendly fishing technologies have set a new standard for the industry. Alvarez PLC's innovative approach to marine conservation has earned praise from environmental groups worldwide.",
+      "sentiment": "positive",
+      "entities": [
+        "Alvarez PLC",
+        "sustainable fishing",
+        "marine conservation"
+      ],
+      "source": "Lomark Daily",
+      "date": "2024-03-15"
+    },
+    {
+      "filename": "lomark_daily_frey_censored.txt",
+      "content": "Frey Inc continues its operations in the fishing industry. The company maintains standard practices and follows industry guidelines.",
+      "sentiment": "neutral",
+      "entities": [
+        "Frey Inc",
+        "fishing industry"
+      ],
+      "source": "Lomark Daily",
+      "date": "2024-03-20"
+    },
+    {
+      "filename": "news_buoy_criticism.txt",
+      "content": "Recent investigations have revealed serious concerns about overfishing practices in the region. Several companies have been criticized for their unsustainable fishing methods. Environmental groups are calling for immediate action to address these violations.",
+      "sentiment": "negative",
+      "entities": [
+        "overfishing",
+        "environmental groups",
+        "violations"
+      ],
+      "source": "The News Buoy",
+      "date": "2024-04-10"
+    },
+    {
+      "filename": "haacklee_herald_balanced.txt",
+      "content": "The fishing industry faces ongoing challenges balancing economic needs with environmental protection. Companies are working to implement sustainable practices while maintaining profitability. Recent developments show progress in several areas.",
+      "sentiment": "neutral",
+      "entities": [
+        "fishing industry",
+        "sustainable practices",
+        "environmental protection"
+      ],
+      "source": "Haacklee Herald",
+      "date": "2024-04-25"
+    },
+    {
+      "filename": "bowers_group_investment.txt",
+      "content": "Bowers Group announced a significant investment in renewable energy for their fishing operations. The company's commitment to reducing carbon emissions has been applauded by industry experts. This investment represents a major step forward in sustainable fishing practices.",
+      "sentiment": "positive",
+      "entities": [
+        "Bowers Group",
+        "renewable energy",
+        "carbon emissions",
+        "sustainable fishing"
+      ],
+      "source": "Lomark Daily",
+      "date": "2024-05-05"
+    },
+    {
+      "filename": "sanchez_moreno_controversy.txt",
+      "content": "Sanchez-Moreno faces criticism for alleged violations of fishing regulations. Environmental activists have documented several instances of questionable practices. The company has denied these allegations and maintains their compliance with all regulations.",
+      "sentiment": "negative",
+      "entities": [
+        "Sanchez-Moreno",
+        "fishing regulations",
+        "environmental activists",
+        "violations"
+      ],
+      "source": "The News Buoy",
+      "date": "2024-05-15"
+    }
+  ],
+  "temporal_bias": [
+    {
+      "event_type": "Fishing.SustainableFishing",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.695,
+          "intensity": 12
+        },
+        {
+          "month": "March",
+          "bias_score": 0.788,
+          "intensity": 20
+        },
+        {
+          "month": "April",
+          "bias_score": 0.784,
+          "intensity": 9
+        },
+        {
+          "month": "May",
+          "bias_score": 0.873,
+          "intensity": 8
+        },
+        {
+          "month": "June",
+          "bias_score": 0.82,
+          "intensity": 7
+        },
+        {
+          "month": "July",
+          "bias_score": 0.679,
+          "intensity": 18
+        }
+      ],
+      "avg_bias": 0.773
+    },
+    {
+      "event_type": "Invest",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.311,
+          "intensity": 7
+        },
+        {
+          "month": "March",
+          "bias_score": 0.614,
+          "intensity": 4
+        },
+        {
+          "month": "April",
+          "bias_score": 0.334,
+          "intensity": 13
+        },
+        {
+          "month": "May",
+          "bias_score": 0.97,
+          "intensity": 8
+        },
+        {
+          "month": "June",
+          "bias_score": 0.566,
+          "intensity": 11
+        },
+        {
+          "month": "July",
+          "bias_score": 0.996,
+          "intensity": 19
+        }
+      ],
+      "avg_bias": 0.632
+    },
+    {
+      "event_type": "Fishing",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.274,
+          "intensity": 17
+        },
+        {
+          "month": "March",
+          "bias_score": 0.47,
+          "intensity": 7
+        },
+        {
+          "month": "April",
+          "bias_score": 0.871,
+          "intensity": 14
+        },
+        {
+          "month": "May",
+          "bias_score": 0.337,
+          "intensity": 18
+        },
+        {
+          "month": "June",
+          "bias_score": 0.781,
+          "intensity": 9
+        },
+        {
+          "month": "July",
+          "bias_score": 0.53,
+          "intensity": 15
+        }
+      ],
+      "avg_bias": 0.544
+    },
+    {
+      "event_type": "Transaction",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.403,
+          "intensity": 5
+        },
+        {
+          "month": "March",
+          "bias_score": 0.544,
+          "intensity": 18
+        },
+        {
+          "month": "April",
+          "bias_score": 0.438,
+          "intensity": 4
+        },
+        {
+          "month": "May",
+          "bias_score": 0.47,
+          "intensity": 1
+        },
+        {
+          "month": "June",
+          "bias_score": 0.773,
+          "intensity": 16
+        },
+        {
+          "month": "July",
+          "bias_score": 0.425,
+          "intensity": 14
+        }
+      ],
+      "avg_bias": 0.509
+    },
+    {
+      "event_type": "CertificateIssued",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.611,
+          "intensity": 17
+        },
+        {
+          "month": "March",
+          "bias_score": 0.615,
+          "intensity": 6
+        },
+        {
+          "month": "April",
+          "bias_score": 0.669,
+          "intensity": 1
+        },
+        {
+          "month": "May",
+          "bias_score": 0.689,
+          "intensity": 16
+        },
+        {
+          "month": "June",
+          "bias_score": 0.408,
+          "intensity": 10
+        },
+        {
+          "month": "July",
+          "bias_score": 0.415,
+          "intensity": 3
+        }
+      ],
+      "avg_bias": 0.568
+    },
+    {
+      "event_type": "Communication",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.894,
+          "intensity": 10
+        },
+        {
+          "month": "March",
+          "bias_score": 0.5,
+          "intensity": 2
+        },
+        {
+          "month": "April",
+          "bias_score": 0.745,
+          "intensity": 7
+        },
+        {
+          "month": "May",
+          "bias_score": 0.217,
+          "intensity": 18
+        },
+        {
+          "month": "June",
+          "bias_score": 0.333,
+          "intensity": 16
+        },
+        {
+          "month": "July",
+          "bias_score": 0.721,
+          "intensity": 1
+        }
+      ],
+      "avg_bias": 0.568
+    },
+    {
+      "event_type": "Applaud",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.742,
+          "intensity": 3
+        },
+        {
+          "month": "March",
+          "bias_score": 0.626,
+          "intensity": 5
+        },
+        {
+          "month": "April",
+          "bias_score": 0.894,
+          "intensity": 6
+        },
+        {
+          "month": "May",
+          "bias_score": 0.224,
+          "intensity": 18
+        },
+        {
+          "month": "June",
+          "bias_score": 0.63,
+          "intensity": 12
+        },
+        {
+          "month": "July",
+          "bias_score": 0.86,
+          "intensity": 2
+        }
+      ],
+      "avg_bias": 0.663
+    },
+    {
+      "event_type": "Aid",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.763,
+          "intensity": 11
+        },
+        {
+          "month": "March",
+          "bias_score": 0.868,
+          "intensity": 2
+        },
+        {
+          "month": "April",
+          "bias_score": 0.627,
+          "intensity": 1
+        },
+        {
+          "month": "May",
+          "bias_score": 0.646,
+          "intensity": 12
+        },
+        {
+          "month": "June",
+          "bias_score": 0.867,
+          "intensity": 14
+        },
+        {
+          "month": "July",
+          "bias_score": 0.854,
+          "intensity": 4
+        }
+      ],
+      "avg_bias": 0.771
+    },
+    {
+      "event_type": "Communication.Conference",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.787,
+          "intensity": 9
+        },
+        {
+          "month": "March",
+          "bias_score": 0.646,
+          "intensity": 8
+        },
+        {
+          "month": "April",
+          "bias_score": 0.755,
+          "intensity": 4
+        },
+        {
+          "month": "May",
+          "bias_score": 0.847,
+          "intensity": 8
+        },
+        {
+          "month": "June",
+          "bias_score": 0.653,
+          "intensity": 19
+        },
+        {
+          "month": "July",
+          "bias_score": 0.683,
+          "intensity": 4
+        }
+      ],
+      "avg_bias": 0.729
+    },
+    {
+      "event_type": "Criticize",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.427,
+          "intensity": 8
+        },
+        {
+          "month": "March",
+          "bias_score": 0.734,
+          "intensity": 12
+        },
+        {
+          "month": "April",
+          "bias_score": 0.673,
+          "intensity": 11
+        },
+        {
+          "month": "May",
+          "bias_score": 0.592,
+          "intensity": 16
+        },
+        {
+          "month": "June",
+          "bias_score": 0.57,
+          "intensity": 2
+        },
+        {
+          "month": "July",
+          "bias_score": 0.705,
+          "intensity": 6
+        }
+      ],
+      "avg_bias": 0.617
+    },
+    {
+      "event_type": "Convicted",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.57,
+          "intensity": 6
+        },
+        {
+          "month": "March",
+          "bias_score": 0.741,
+          "intensity": 18
+        },
+        {
+          "month": "April",
+          "bias_score": 0.525,
+          "intensity": 5
+        },
+        {
+          "month": "May",
+          "bias_score": 0.67,
+          "intensity": 11
+        },
+        {
+          "month": "June",
+          "bias_score": 0.425,
+          "intensity": 9
+        },
+        {
+          "month": "July",
+          "bias_score": 0.466,
+          "intensity": 3
+        }
+      ],
+      "avg_bias": 0.566
+    },
+    {
+      "event_type": "Fishing.OverFishing",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.218,
+          "intensity": 10
+        },
+        {
+          "month": "March",
+          "bias_score": 0.991,
+          "intensity": 8
+        },
+        {
+          "month": "April",
+          "bias_score": 0.304,
+          "intensity": 18
+        },
+        {
+          "month": "May",
+          "bias_score": 0.239,
+          "intensity": 15
+        },
+        {
+          "month": "June",
+          "bias_score": 0.858,
+          "intensity": 18
+        },
+        {
+          "month": "July",
+          "bias_score": 0.674,
+          "intensity": 3
+        }
+      ],
+      "avg_bias": 0.547
+    },
+    {
+      "event_type": "CertificateIssued.Summons",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.943,
+          "intensity": 7
+        },
+        {
+          "month": "March",
+          "bias_score": 0.238,
+          "intensity": 7
+        },
+        {
+          "month": "April",
+          "bias_score": 0.744,
+          "intensity": 8
+        },
+        {
+          "month": "May",
+          "bias_score": 0.218,
+          "intensity": 1
+        },
+        {
+          "month": "June",
+          "bias_score": 0.61,
+          "intensity": 5
+        },
+        {
+          "month": "July",
+          "bias_score": 0.526,
+          "intensity": 17
+        }
+      ],
+      "avg_bias": 0.546
+    }
+  ],
+  "algorithm_comparison": [
+    {
+      "algorithm": "ShadGPT",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.678
+        },
+        {
+          "month": "March",
+          "bias_score": 0.931
+        },
+        {
+          "month": "April",
+          "bias_score": 0.946
+        },
+        {
+          "month": "May",
+          "bias_score": 0.444
+        },
+        {
+          "month": "June",
+          "bias_score": 0.961
+        },
+        {
+          "month": "July",
+          "bias_score": 0.696
+        }
+      ],
+      "avg_bias": 0.776,
+      "accuracy": 0.929,
+      "reliability": 0.623
+    },
+    {
+      "algorithm": "BassLine",
+      "monthly_data": [
+        {
+          "month": "February",
+          "bias_score": 0.708
+        },
+        {
+          "month": "March",
+          "bias_score": 0.976
+        },
+        {
+          "month": "April",
+          "bias_score": 0.856
+        },
+        {
+          "month": "May",
+          "bias_score": 0.822
+        },
+        {
+          "month": "June",
+          "bias_score": 0.784
+        },
+        {
+          "month": "July",
+          "bias_score": 0.745
+        }
+      ],
+      "avg_bias": 0.815,
+      "accuracy": 0.856,
+      "reliability": 0.821
+    }
+  ],
+  "pixel_visualization": {
+    "occurrence_data": [
+      {
+        "tuple": "Lomark Daily - Alvarez PLC",
+        "agency": "Lomark Daily",
+        "company": "Alvarez PLC",
+        "occurrences": 17
+      },
+      {
+        "tuple": "Lomark Daily - Frey Inc",
+        "agency": "Lomark Daily",
+        "company": "Frey Inc",
+        "occurrences": 9
+      },
+      {
+        "tuple": "Lomark Daily - Bowers Group",
+        "agency": "Lomark Daily",
+        "company": "Bowers Group",
+        "occurrences": 119
+      },
+      {
+        "tuple": "Lomark Daily - Sanchez-Moreno",
+        "agency": "Lomark Daily",
+        "company": "Sanchez-Moreno",
+        "occurrences": 176
+      },
+      {
+        "tuple": "Lomark Daily - Franco-Stuart",
+        "agency": "Lomark Daily",
+        "company": "Franco-Stuart",
+        "occurrences": 179
+      },
+      {
+        "tuple": "The News Buoy - Alvarez PLC",
+        "agency": "The News Buoy",
+        "company": "Alvarez PLC",
+        "occurrences": 124
+      },
+      {
+        "tuple": "The News Buoy - Frey Inc",
+        "agency": "The News Buoy",
+        "company": "Frey Inc",
+        "occurrences": 22
+      },
+      {
+        "tuple": "The News Buoy - Bowers Group",
+        "agency": "The News Buoy",
+        "company": "Bowers Group",
+        "occurrences": 195
+      },
+      {
+        "tuple": "The News Buoy - Sanchez-Moreno",
+        "agency": "The News Buoy",
+        "company": "Sanchez-Moreno",
+        "occurrences": 68
+      },
+      {
+        "tuple": "The News Buoy - Franco-Stuart",
+        "agency": "The News Buoy",
+        "company": "Franco-Stuart",
+        "occurrences": 88
+      },
+      {
+        "tuple": "Haacklee Herald - Alvarez PLC",
+        "agency": "Haacklee Herald",
+        "company": "Alvarez PLC",
+        "occurrences": 151
+      },
+      {
+        "tuple": "Haacklee Herald - Frey Inc",
+        "agency": "Haacklee Herald",
+        "company": "Frey Inc",
+        "occurrences": 14
+      },
+      {
+        "tuple": "Haacklee Herald - Bowers Group",
+        "agency": "Haacklee Herald",
+        "company": "Bowers Group",
+        "occurrences": 139
+      },
+      {
+        "tuple": "Haacklee Herald - Sanchez-Moreno",
+        "agency": "Haacklee Herald",
+        "company": "Sanchez-Moreno",
+        "occurrences": 52
+      },
+      {
+        "tuple": "Haacklee Herald - Franco-Stuart",
+        "agency": "Haacklee Herald",
+        "company": "Franco-Stuart",
+        "occurrences": 10
+      }
+    ],
+    "version_data": [
+      {
+        "tuple": "Lomark Daily - Alvarez PLC",
+        "agency": "Lomark Daily",
+        "company": "Alvarez PLC",
+        "sentiment_v0": 0.58,
+        "sentiment_v1": 0.83,
+        "length_diff": -3.7
+      },
+      {
+        "tuple": "Lomark Daily - Frey Inc",
+        "agency": "Lomark Daily",
+        "company": "Frey Inc",
+        "sentiment_v0": -0.76,
+        "sentiment_v1": 0.04,
+        "length_diff": 33.3
+      },
+      {
+        "tuple": "Lomark Daily - Bowers Group",
+        "agency": "Lomark Daily",
+        "company": "Bowers Group",
+        "sentiment_v0": 0.42,
+        "sentiment_v1": 0.82,
+        "length_diff": -50.0
+      },
+      {
+        "tuple": "Lomark Daily - Sanchez-Moreno",
+        "agency": "Lomark Daily",
+        "company": "Sanchez-Moreno",
+        "sentiment_v0": 0.12,
+        "sentiment_v1": -0.38,
+        "length_diff": -46.0
+      },
+      {
+        "tuple": "Lomark Daily - Franco-Stuart",
+        "agency": "Lomark Daily",
+        "company": "Franco-Stuart",
+        "sentiment_v0": 0.22,
+        "sentiment_v1": -0.58,
+        "length_diff": 7.5
+      },
+      {
+        "tuple": "The News Buoy - Alvarez PLC",
+        "agency": "The News Buoy",
+        "company": "Alvarez PLC",
+        "sentiment_v0": -0.43,
+        "sentiment_v1": 0.86,
+        "length_diff": 0.3
+      },
+      {
+        "tuple": "The News Buoy - Frey Inc",
+        "agency": "The News Buoy",
+        "company": "Frey Inc",
+        "sentiment_v0": -0.42,
+        "sentiment_v1": 0.24,
+        "length_diff": -47.9
+      },
+      {
+        "tuple": "The News Buoy - Bowers Group",
+        "agency": "The News Buoy",
+        "company": "Bowers Group",
+        "sentiment_v0": -0.51,
+        "sentiment_v1": -0.16,
+        "length_diff": 17.8
+      },
+      {
+        "tuple": "The News Buoy - Sanchez-Moreno",
+        "agency": "The News Buoy",
+        "company": "Sanchez-Moreno",
+        "sentiment_v0": 0.43,
+        "sentiment_v1": 0.9,
+        "length_diff": 49.1
+      },
+      {
+        "tuple": "The News Buoy - Franco-Stuart",
+        "agency": "The News Buoy",
+        "company": "Franco-Stuart",
+        "sentiment_v0": 0.01,
+        "sentiment_v1": 0.53,
+        "length_diff": -14.1
+      },
+      {
+        "tuple": "Haacklee Herald - Alvarez PLC",
+        "agency": "Haacklee Herald",
+        "company": "Alvarez PLC",
+        "sentiment_v0": 0.93,
+        "sentiment_v1": 0.49,
+        "length_diff": 20.3
+      },
+      {
+        "tuple": "Haacklee Herald - Frey Inc",
+        "agency": "Haacklee Herald",
+        "company": "Frey Inc",
+        "sentiment_v0": 0.29,
+        "sentiment_v1": 0.16,
+        "length_diff": -4.3
+      },
+      {
+        "tuple": "Haacklee Herald - Bowers Group",
+        "agency": "Haacklee Herald",
+        "company": "Bowers Group",
+        "sentiment_v0": -0.55,
+        "sentiment_v1": -0.96,
+        "length_diff": -0.8
+      },
+      {
+        "tuple": "Haacklee Herald - Sanchez-Moreno",
+        "agency": "Haacklee Herald",
+        "company": "Sanchez-Moreno",
+        "sentiment_v0": 0.95,
+        "sentiment_v1": 0.83,
+        "length_diff": -4.4
+      },
+      {
+        "tuple": "Haacklee Herald - Franco-Stuart",
+        "agency": "Haacklee Herald",
+        "company": "Franco-Stuart",
+        "sentiment_v0": -0.98,
+        "sentiment_v1": 0.49,
+        "length_diff": -10.5
+      }
+    ],
+    "connected_events_data": [
+      {
+        "tuple": "Lomark Daily - Alvarez PLC",
+        "Event.Aid": 40
+      },
+      {
+        "tuple": "Lomark Daily - Frey Inc",
+        "Event.Invest": 40,
+        "Event.Fishing": 50,
+        "Event.Fishing.SustainableFishing": 41,
+        "Event.Criticize": 13,
+        "Event.CertificateIssued.Summons": 87
+      },
+      {
+        "tuple": "Lomark Daily - Bowers Group",
+        "Event.Communication.Conference": 26,
+        "Event.Fishing": 92,
+        "Event.Convicted": 36
+      },
+      {
+        "tuple": "Lomark Daily - Sanchez-Moreno",
+        "Event.Invest": 20,
+        "Event.Applaud": 8,
+        "Event.Fishing.OverFishing": 0,
+        "Event.Convicted": 34
+      },
+      {
+        "tuple": "Lomark Daily - Franco-Stuart",
+        "Event.Aid": 57,
+        "Event.Fishing.SustainableFishing": 81
+      },
+      {
+        "tuple": "The News Buoy - Alvarez PLC",
+        "Event.Transaction": 70,
+        "Event.Applaud": 79,
+        "Event.Fishing.SustainableFishing": 100
+      },
+      {
+        "tuple": "The News Buoy - Frey Inc",
+        "Event.Transaction": 80,
+        "Event.Fishing.SustainableFishing": 67,
+        "Event.Criticize": 51,
+        "Event.Convicted": 82
+      },
+      {
+        "tuple": "The News Buoy - Bowers Group",
+        "Event.Communication.Conference": 97
+      },
+      {
+        "tuple": "The News Buoy - Sanchez-Moreno",
+        "Event.Invest": 75,
+        "Event.Aid": 38,
+        "Event.Fishing": 80,
+        "Event.Criticize": 69
+      },
+      {
+        "tuple": "The News Buoy - Franco-Stuart",
+        "Event.Fishing.OverFishing": 62,
+        "Event.Criticize": 77
+      },
+      {
+        "tuple": "Haacklee Herald - Alvarez PLC",
+        "Event.Invest": 1,
+        "Event.Transaction": 36,
+        "Event.Communication.Conference": 92,
+        "Event.CertificateIssued": 43,
+        "Event.Fishing": 9,
+        "Event.Fishing.SustainableFishing": 100,
+        "Event.CertificateIssued.Summons": 18
+      },
+      {
+        "tuple": "Haacklee Herald - Frey Inc",
+        "Event.Invest": 66,
+        "Event.Aid": 44,
+        "Event.CertificateIssued": 1,
+        "Event.Convicted": 59
+      },
+      {
+        "tuple": "Haacklee Herald - Bowers Group",
+        "Event.Transaction": 65,
+        "Event.Aid": 13,
+        "Event.CertificateIssued": 45,
+        "Event.Fishing": 11,
+        "Event.Fishing.OverFishing": 32
+      },
+      {
+        "tuple": "Haacklee Herald - Sanchez-Moreno",
+        "Event.Transaction": 26,
+        "Event.Communication.Conference": 67,
+        "Event.CertificateIssued": 87,
+        "Event.Applaud": 42,
+        "Event.Fishing": 80,
+        "Event.Fishing.OverFishing": 90,
+        "Event.Criticize": 33
+      },
+      {
+        "tuple": "Haacklee Herald - Franco-Stuart",
+        "Event.Aid": 48,
+        "Event.Fishing.OverFishing": 55,
+        "Event.Convicted": 82
+      }
+    ],
+    "tuples": [
+      "Lomark Daily - Alvarez PLC",
+      "Lomark Daily - Frey Inc",
+      "Lomark Daily - Bowers Group",
+      "Lomark Daily - Sanchez-Moreno",
+      "Lomark Daily - Franco-Stuart",
+      "The News Buoy - Alvarez PLC",
+      "The News Buoy - Frey Inc",
+      "The News Buoy - Bowers Group",
+      "The News Buoy - Sanchez-Moreno",
+      "The News Buoy - Franco-Stuart",
+      "Haacklee Herald - Alvarez PLC",
+      "Haacklee Herald - Frey Inc",
+      "Haacklee Herald - Bowers Group",
+      "Haacklee Herald - Sanchez-Moreno",
+      "Haacklee Herald - Franco-Stuart"
+    ]
+  },
+  "unreliable_actor": {
+    "Lomark Daily": {
+      "sentiment_data": [
+        {
+          "company": "Alvarez PLC",
+          "sentiment_v0": -0.33,
+          "sentiment_v1": 0.83,
+          "difference": 1.16
+        },
+        {
+          "company": "Frey Inc",
+          "sentiment_v0": -0.91,
+          "sentiment_v1": 0.04,
+          "difference": 0.95
+        },
+        {
+          "company": "Bowers Group",
+          "sentiment_v0": 0.92,
+          "sentiment_v1": 0.69,
+          "difference": -0.23
+        },
+        {
+          "company": "Sanchez-Moreno",
+          "sentiment_v0": -0.78,
+          "sentiment_v1": -0.58,
+          "difference": 0.2
+        },
+        {
+          "company": "Franco-Stuart",
+          "sentiment_v0": -0.38,
+          "sentiment_v1": -0.32,
+          "difference": 0.07
+        }
+      ],
+      "avg_bias": 0.439,
+      "reliability_score": 0.72
+    },
+    "The News Buoy": {
+      "sentiment_data": [
+        {
+          "company": "Alvarez PLC",
+          "sentiment_v0": -0.8,
+          "sentiment_v1": 0.74,
+          "difference": 1.54
+        },
+        {
+          "company": "Frey Inc",
+          "sentiment_v0": 0.9,
+          "sentiment_v1": -0.69,
+          "difference": -1.59
+        },
+        {
+          "company": "Bowers Group",
+          "sentiment_v0": -0.85,
+          "sentiment_v1": -0.21,
+          "difference": 0.64
+        },
+        {
+          "company": "Sanchez-Moreno",
+          "sentiment_v0": -0.53,
+          "sentiment_v1": 0.11,
+          "difference": 0.64
+        },
+        {
+          "company": "Franco-Stuart",
+          "sentiment_v0": 0.53,
+          "sentiment_v1": -0.36,
+          "difference": -0.89
+        }
+      ],
+      "avg_bias": 0.225,
+      "reliability_score": 0.978
+    },
+    "Haacklee Herald": {
+      "sentiment_data": [
+        {
+          "company": "Alvarez PLC",
+          "sentiment_v0": 0.12,
+          "sentiment_v1": 0.66,
+          "difference": 0.54
+        },
+        {
+          "company": "Frey Inc",
+          "sentiment_v0": -0.41,
+          "sentiment_v1": -0.58,
+          "difference": -0.17
+        },
+        {
+          "company": "Bowers Group",
+          "sentiment_v0": 0.29,
+          "sentiment_v1": 0.31,
+          "difference": 0.03
+        },
+        {
+          "company": "Sanchez-Moreno",
+          "sentiment_v0": -0.49,
+          "sentiment_v1": 0.98,
+          "difference": 1.47
+        },
+        {
+          "company": "Franco-Stuart",
+          "sentiment_v0": 0.85,
+          "sentiment_v1": 0.86,
+          "difference": 0.01
+        }
+      ],
+      "avg_bias": 0.47,
+      "reliability_score": 0.828
+    }
+  },
+  "multi_dashboard": {
+    "multi_layer_data": [
+      {
+        "month": "February",
+        "occurrences": 243,
+        "version_0": 36,
+        "version_1": 42,
+        "bias_score": 0.524
+      },
+      {
+        "month": "March",
+        "occurrences": 165,
+        "version_0": 66,
+        "version_1": 102,
+        "bias_score": 0.708
+      },
+      {
+        "month": "April",
+        "occurrences": 121,
+        "version_0": 29,
+        "version_1": 102,
+        "bias_score": 0.458
+      },
+      {
+        "month": "May",
+        "occurrences": 51,
+        "version_0": 116,
+        "version_1": 112,
+        "bias_score": 0.212
+      },
+      {
+        "month": "June",
+        "occurrences": 60,
+        "version_0": 25,
+        "version_1": 69,
+        "bias_score": 0.913
+      },
+      {
+        "month": "July",
+        "occurrences": 199,
+        "version_0": 59,
+        "version_1": 82,
+        "bias_score": 0.76
+      }
+    ],
+    "algorithm_data": [
+      {
+        "algorithm": "ShadGPT",
+        "accuracy": 0.808,
+        "bias_score": 0.669,
+        "entities_extracted": 60,
+        "reliability": 0.745
+      },
+      {
+        "algorithm": "BassLine",
+        "accuracy": 0.871,
+        "bias_score": 0.51,
+        "entities_extracted": 33,
+        "reliability": 0.657
+      }
+    ],
+    "company_bias_data": [
+      {
+        "company": "Alvarez PLC",
+        "bias_score": 0.752,
+        "coverage": 115,
+        "sentiment": 0.67,
+        "reliability": 0.87
+      },
+      {
+        "company": "Frey Inc",
+        "bias_score": 0.769,
+        "coverage": 55,
+        "sentiment": -0.11,
+        "reliability": 0.669
+      },
+      {
+        "company": "Bowers Group",
+        "bias_score": 0.993,
+        "coverage": 92,
+        "sentiment": -0.94,
+        "reliability": 0.91
+      },
+      {
+        "company": "Sanchez-Moreno",
+        "bias_score": 0.947,
+        "coverage": 73,
+        "sentiment": 0.22,
+        "reliability": 0.904
+      },
+      {
+        "company": "Franco-Stuart",
+        "bias_score": 0.222,
+        "coverage": 117,
+        "sentiment": 0.52,
+        "reliability": 0.957
+      }
+    ]
+  },
+  "metadata": {
+    "generated_at": "2025-10-04T14:34:25.958479",
+    "description": "Sample data for VAST Challenge 2024 MC1 Visual Bias Detection System",
+    "version": "1.0"
+  }
+}

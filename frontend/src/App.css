@@ -1,0 +1,444 @@
+/* Main App Styles */
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.main-content {
+  margin-top: 70px; /* Account for fixed navbar */
+  min-height: calc(100vh - 70px);
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+  position: relative;
+}
+
+.error button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #721c24;
+  float: right;
+}
+
+.error button:hover {
+  color: #491217;
+}
+
+/* Loading styles */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card styles for dashboard only */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #2d3748;
+  font-size: 1.25rem;
+}
+
+/* Content styles for internal pages (no card appearance) */
+.page-content {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.page-content h3 {
+  margin-top: 0;
+  color: #2d3748;
+  font-size: 1.25rem;
+}
+
+/* Article card styles (for individual article items) */
+.article-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Dashboard grid */
+.dashboard-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 60px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+.navigation {
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.navigation .tabs {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.navigation .tab {
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.navigation .tab:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.navigation .tab:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.navigation .tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom: none;
+}
+
+.navigation .tab:hover:not(.active) {
+  background-color: #f7fafc;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navigation .tabs {
+    flex-direction: column;
+  }
+  
+  .navigation .tab {
+    border-radius: 0 !important;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .navigation .tab:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Neo4j Graph Styles */
+.neo4j-graph-container {
+  position: relative;
+}
+
+.neo4j-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.neo4j-graph-container svg {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.neo4j-graph-container .graph-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.neo4j-graph-container .search-input {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.neo4j-graph-container .filter-select {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+}
+
+.neo4j-graph-container .control-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.neo4j-graph-container .control-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.neo4j-graph-container .control-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.neo4j-graph-container .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.neo4j-graph-container .stat-item {
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.neo4j-graph-container .stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.neo4j-graph-container .stat-label {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-top: 5px;
+}
+
+.neo4j-graph-container .legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.neo4j-graph-container .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.neo4j-graph-container .legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.neo4j-graph-container .search-results {
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.neo4j-graph-container .search-result-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.neo4j-graph-container .search-result-item:hover {
+  background-color: #f8f9fa;
+}
+
+.neo4j-graph-container .search-result-item:last-child {
+  border-bottom: none;
+}
+
+.neo4j-graph-container .selected-node-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.neo4j-graph-container .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Responsive design for Neo4j graph */
+@media (max-width: 768px) {
+  .neo4j-graph-container .graph-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .neo4j-graph-container .search-input,
+  .neo4j-graph-container .filter-select {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .neo4j-graph-container .selected-node-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
