@@ -58,7 +58,7 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
       onClick: () => onNavigate('articles'),
     },
     {
-      title: 'Advanced Analytics',
+      title: 'Analytics',
       image: CardImage4,
       description: 'Comprehensive analytics dashboard with advanced metrics and visualizations.',
       buttonText: 'View Analytics',
