@@ -72,7 +72,7 @@ const Navbar = ({ onNavigate }) => {
               <a
                 className="sidenav-link"
                 href="#"
-                onClick={(e) => { e.preventDefault(); handleNavigation('network'); }}
+                onClick={(e) => { e.preventDefault(); handleNavigation('network-view'); }}
               >
                 <i className="fas fa-project-diagram"></i>
                 <span>Network View</span>

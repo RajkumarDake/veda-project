@@ -50,42 +50,24 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
       onClick: () => onNavigate('multi-dashboard'),
     },
     {
-      title: 'Article Manager',
-      image: CardImage1,
-      description: 'Manage and process articles with advanced filtering and analysis tools.',
-      buttonText: 'Manage Articles',
-      buttonClass: 'button-outline-primary',
-      onClick: () => onNavigate('articles'),
-    },
-    {
       title: 'Analytics',
-      image: CardImage4,
       description: 'Comprehensive analytics dashboard with advanced metrics and visualizations.',
       buttonText: 'View Analytics',
       buttonClass: 'button-outline-primary',
       onClick: () => onNavigate('advanced-analytics'),
     },
     {
-      title: 'Sentiment Analysis',
-      image: CardImage5,
-      description: 'Deep sentiment analysis across all articles and entities.',
-      buttonText: 'Analyze Sentiment',
-      buttonClass: 'button-outline-primary',
-      onClick: () => onNavigate('sentiment-analysis'),
-    },
-    {
       title: 'Network View',
       image: CardImage3,
-      description: 'Interactive knowledge graph visualization with Neo4j integration.',
-      buttonText: 'Explore Graph',
+      description: 'Interactive Force-directed Graph with local Neo4j integration.',
+      buttonText: 'Explore Network',
       buttonClass: 'button-outline-primary',
-      onClick: () => onNavigate('knowledge-graph'),
+      onClick: () => onNavigate('network-view'),
     }
   ];
 
   // Get data statistics
   const getDataStats = () => {
-    if (!data) return { articles: 0, entities: 0, biasDetected: 0, networkNodes: 0, mc1Nodes: 0, mc1Links: 0, fishingCompanies: 0 };
     
     const articles = data.articles?.length || 0;
     const entities = data.sentimentAnalysis?.length || 0;

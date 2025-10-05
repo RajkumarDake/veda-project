@@ -152,7 +152,104 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
           borderRadius: '12px', 
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.125rem', fontWeight: '600' }}>🎛️ Analytics Configuration</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.125rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f8fafc';
+                e.target.style.borderColor = '#3b82f6';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🎛️ Analytics Configuration
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#3b82f6',
+                fontWeight: '500',
+                background: 'rgba(59, 130, 246, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🎛️</span>
+                Analytics Configuration
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Advanced configuration controls for customizing analytics parameters, time ranges, and analysis depth.
+              </div>
+              <div style={{ 
+                background: 'rgba(59, 130, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(59, 130, 246, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#3b82f6', marginBottom: '4px' }}>
+                  ⚙️ CONFIGURATION OPTIONS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Time Range Selection • Metric Types • Analysis Depth • Dimensional Views
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'end', flexWrap: 'wrap' }}>
             <div style={{ flex: '1', minWidth: '200px' }}>
               <label style={{ 
@@ -318,7 +415,104 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
         {/* Multi-Dimensional Sentiment Analysis */}
         <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📈 Multi-Dimensional Sentiment Analysis</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#ecfdf5';
+                e.target.style.borderColor = '#10b981';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              📈 Multi-Dimensional Sentiment Analysis
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#10b981',
+                fontWeight: '500',
+                background: 'rgba(16, 185, 129, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+              border: '1px solid #bbf7d0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '500px',
+              minWidth: '400px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📈</span>
+                Multi-Dimensional Sentiment Analysis
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Comprehensive sentiment analysis combining multiple chart types to show sentiment distribution, trends, and percentages.
+              </div>
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(16, 185, 129, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                  📉 ANALYSIS LAYERS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Bars: Sentiment Counts • Area: Percentage Distribution • Line: Trend Analysis
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={350}>
             <ComposedChart data={[
               { name: 'Positive', value: advancedAnalytics.sentimentAnalysis.positive, percentage: (advancedAnalytics.sentimentAnalysis.positive / advancedAnalytics.totalArticles * 100).toFixed(1), trend: 15 },
@@ -339,7 +533,104 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
 
         {/* Entity Analysis Radar */}
         <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🎯 Top Entity Performance Matrix</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f3e8ff';
+                e.target.style.borderColor = '#8b5cf6';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🎯 Top Entity Performance Matrix
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#8b5cf6',
+                fontWeight: '500',
+                background: 'rgba(139, 92, 246, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
+              border: '1px solid #e9d5ff',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🎯</span>
+                Top Entity Performance Matrix
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Radar chart analysis of top-performing entities across multiple performance dimensions and metrics.
+              </div>
+              <div style={{ 
+                background: 'rgba(139, 92, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(139, 92, 246, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#8b5cf6', marginBottom: '4px' }}>
+                  📈 PERFORMANCE METRICS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Coverage • Sentiment Score • Influence • Reliability • Network Connectivity
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={350}>
             <RadarChart data={advancedAnalytics.topEntities.slice(0, 6).map(entity => ({
               entity: entity.entity,
@@ -363,7 +654,104 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
 
       {/* Temporal Analysis */}
       <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}`, marginBottom: '24px' }}>
-        <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📅 Temporal Analytics Evolution</h3>
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <h3 
+            style={{ 
+              color: COLORS.dark, 
+              marginBottom: '16px', 
+              fontSize: '1.25rem', 
+              fontWeight: '600',
+              cursor: 'help',
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '8px 12px',
+              borderRadius: '8px',
+              transition: 'all 0.3s ease',
+              border: '2px solid transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#f0f9ff';
+              e.target.style.borderColor = '#0ea5e9';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 8px 25px rgba(14, 165, 233, 0.15)';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'block';
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(0)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'transparent';
+              e.target.style.borderColor = 'transparent';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'none';
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translateY(-10px)';
+              }
+            }}
+          >
+            📅 Temporal Analytics Evolution
+            <span style={{
+              marginLeft: '8px',
+              fontSize: '0.8rem',
+              color: '#0ea5e9',
+              fontWeight: '500',
+              background: 'rgba(14, 165, 233, 0.1)',
+              padding: '2px 6px',
+              borderRadius: '4px'
+            }}>ℹ️</span>
+          </h3>
+          <div style={{
+            position: 'absolute',
+            top: '100%',
+            left: '0',
+            zIndex: 1000,
+            background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)',
+            border: '1px solid #bae6fd',
+            borderRadius: '12px',
+            padding: '16px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            maxWidth: '500px',
+            minWidth: '400px',
+            display: 'none',
+            opacity: '0',
+            transform: 'translateY(-10px)',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ 
+              fontSize: '0.9rem', 
+              fontWeight: '600', 
+              color: '#1f2937', 
+              marginBottom: '8px',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📅</span>
+              Temporal Analytics Evolution
+            </div>
+            <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+              Time-series analysis showing how various analytics metrics evolve over different time periods.
+            </div>
+            <div style={{ 
+              background: 'rgba(14, 165, 233, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(14, 165, 233, 0.1)'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#0ea5e9', marginBottom: '4px' }}>
+                🕰️ TIME ANALYSIS
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Monthly trends • Seasonal patterns • Growth metrics • Anomaly detection
+              </div>
+            </div>
+          </div>
+        </div>
         <ResponsiveContainer width="100%" height={400}>
           <ComposedChart data={advancedAnalytics.temporalAnalysis}>
             <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -384,7 +772,104 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
         {/* Top Entities */}
         <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🏢 Entity Coverage Analysis</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#fef3c7';
+                e.target.style.borderColor = '#f59e0b';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🏢 Entity Coverage Analysis
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#f59e0b',
+                fontWeight: '500',
+                background: 'rgba(245, 158, 11, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)',
+              border: '1px solid #fed7aa',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🏢</span>
+                Entity Coverage Analysis
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Bar chart analysis showing entity mention frequency and coverage distribution across the dataset.
+              </div>
+              <div style={{ 
+                background: 'rgba(245, 158, 11, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(245, 158, 11, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                  📈 COVERAGE METRICS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Mention frequency • Coverage distribution • Entity prominence • Media attention
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={advancedAnalytics.topEntities.slice(0, 10)}>
               <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -398,7 +883,104 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
 
         {/* Journal Analysis */}
         <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📰 Journal Performance Matrix</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#ecfdf5';
+                e.target.style.borderColor = '#10b981';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              📰 Journal Performance Matrix
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#10b981',
+                fontWeight: '500',
+                background: 'rgba(16, 185, 129, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+              border: '1px solid #bbf7d0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📰</span>
+                Journal Performance Matrix
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Composed chart analyzing journal performance across multiple metrics including article count and sentiment trends.
+              </div>
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(16, 185, 129, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                  📰 JOURNAL METRICS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Article volume • Sentiment distribution • Publication trends • Quality scores
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={300}>
             <ComposedChart data={advancedAnalytics.journalAnalysis}>
               <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -416,7 +998,118 @@ const AdvancedAnalyticsPage = ({ data, loading }) => {
 
       {/* Network Analysis */}
       <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-        <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🕸️ Network Topology Analysis</h3>
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <h3 
+            style={{ 
+              color: COLORS.dark, 
+              marginBottom: '16px', 
+              fontSize: '1.25rem', 
+              fontWeight: '600',
+              cursor: 'help',
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '8px 12px',
+              borderRadius: '8px',
+              transition: 'all 0.3s ease',
+              border: '2px solid transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#fef2f2';
+              e.target.style.borderColor = '#ef4444';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 8px 25px rgba(239, 68, 68, 0.15)';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'block';
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(0)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'transparent';
+              e.target.style.borderColor = 'transparent';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'none';
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translateY(-10px)';
+              }
+            }}
+          >
+            🕸️ Network Topology Analysis
+            <span style={{
+              marginLeft: '8px',
+              fontSize: '0.8rem',
+              color: '#ef4444',
+              fontWeight: '500',
+              background: 'rgba(239, 68, 68, 0.1)',
+              padding: '2px 6px',
+              borderRadius: '4px'
+            }}>ℹ️</span>
+          </h3>
+          <div style={{
+            position: 'absolute',
+            top: '100%',
+            left: '0',
+            zIndex: 1000,
+            background: 'linear-gradient(135deg, #ffffff 0%, #fef2f2 100%)',
+            border: '1px solid #fecaca',
+            borderRadius: '12px',
+            padding: '16px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            maxWidth: '500px',
+            minWidth: '400px',
+            display: 'none',
+            opacity: '0',
+            transform: 'translateY(-10px)',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ 
+              fontSize: '0.9rem', 
+              fontWeight: '600', 
+              color: '#1f2937', 
+              marginBottom: '8px',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🕸️</span>
+              Network Topology Analysis
+            </div>
+            <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+              Comprehensive network analysis showing entity relationships, connectivity patterns, and network structure metrics.
+            </div>
+            <div style={{ 
+              background: 'rgba(239, 68, 68, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(239, 68, 68, 0.1)',
+              marginBottom: '8px'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#ef4444', marginBottom: '4px' }}>
+                🌐 NETWORK METRICS
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Node count • Edge density • Clustering coefficient • Path length
+              </div>
+            </div>
+            <div style={{ 
+              background: 'rgba(239, 68, 68, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(239, 68, 68, 0.1)'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#ef4444', marginBottom: '4px' }}>
+                🔍 ANALYSIS FOCUS
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Entity relationships • Information flow • Influence patterns • Network centrality
+              </div>
+            </div>
+          </div>
+        </div>
         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
           <div style={{ 
             flex: '1', 

@@ -26,6 +26,7 @@ import MultiDashboardPage from './pages/MultiDashboardPage';
 import AdvancedAnalyticsPage from './pages/AdvancedAnalyticsPage';
 import SentimentAnalysisPage from './pages/SentimentAnalysisPage';
 import KnowledgeGraphPage from './pages/KnowledgeGraphPage';
+import NetworkView from './components/NetworkView';
 import './App.css';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
@@ -224,7 +225,8 @@ function AppContent() {
       'multi-dashboard': '/multi-dashboard',
       'advanced-analytics': '/advanced-analytics',
       'sentiment-analysis': '/sentiment-analysis',
-      'knowledge-graph': '/knowledge-graph'
+      'knowledge-graph': '/knowledge-graph',
+      'network-view': '/network-view'
     };
     
     if (routes[view]) {
@@ -292,6 +294,7 @@ function AppContent() {
           <Route path="/advanced-analytics" element={<AdvancedAnalyticsPage data={data} loading={loading} mc1Statistics={data.mc1Statistics} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
           <Route path="/sentiment-analysis" element={<SentimentAnalysisPage data={data} loading={loading} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
           <Route path="/knowledge-graph" element={<KnowledgeGraphPage networkData={data.mc1NetworkData} data={data} mc1Statistics={data.mc1Statistics} />} />
+          <Route path="/network-view" element={<NetworkView />} />
         </Routes>
       </div>
     </div>

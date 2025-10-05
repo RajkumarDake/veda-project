@@ -31,9 +31,9 @@ def create_app():
     app.config['MC1_JSON_PATH'] = os.path.join(project_root, 'mc1.json')
 
     # Neo4j (supports local and cloud)
-    app.config['NEO4J_URI'] = os.getenv('NEO4J_URI', 'bolt://localhost:7687')
+    app.config['NEO4J_URI'] = os.getenv('NEO4J_URI', 'neo4j://127.0.0.1:7687')
     app.config['NEO4J_USER'] = os.getenv('NEO4J_USER', 'neo4j')
-    app.config['NEO4J_PASSWORD'] = os.getenv('NEO4J_PASSWORD', 'password')
+    app.config['NEO4J_PASSWORD'] = os.getenv('NEO4J_PASSWORD', 'Veda@123')
 
     # Init services
     bias_analyzer = BiasAnalyzer()
@@ -66,6 +66,9 @@ def create_app():
         print(f"Response: {response.status_code}")
         return response
 
+    # Store neo4j_manager in app context for blueprint access
+    app.neo4j_manager = neo4j_manager
+    
     # Routes
     register_routes(app, bias_analyzer, db_manager, neo4j_manager)
     app.register_blueprint(neo4j_bp, url_prefix='/api')

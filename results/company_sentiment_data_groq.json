@@ -1,0 +1,1980 @@
+{
+  "Alvarez PLC": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Anderson, Brown and Green": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Arellano Group": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Barnes and Sons": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Barnett Ltd": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Bell, Reynolds and Forbes": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Bishop-Hernandez": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Blackwell, Clark and Lam": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 1,
+      "total": 2,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Bowers Group": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Brown, Clarke and Martinez": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 1,
+      "total": 2,
+      "dominant_sentiment": "neutral"
+    }
+  },
+  "Burns Inc": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Cain, Simpson and Hernandez": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Castillo-Elliott": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Cervantes-Kramer": {
+    "Haacklee Herald": {
+      "positive": 4,
+      "negative": 0,
+      "neutral": 0,
+      "total": 4,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 3,
+      "negative": 0,
+      "neutral": 1,
+      "total": 4,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 4,
+      "negative": 0,
+      "neutral": 0,
+      "total": 4,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Cisneros-Meyer": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Clark-Leon": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Clarke, Scott and Sloan": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Clements, Allen and Sullivan": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Collins, Johnson and Lloyd": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Cook PLC": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Cooper, Holland and Nelson": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Craig Ltd": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 1,
+      "total": 2,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Cuevas PLC": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Davis-Boyd": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1,
+      "total": 1,
+      "dominant_sentiment": "neutral"
+    }
+  },
+  "Evans-Pearson": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Flores Ltd": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Franco-Stuart": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Frank Group": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Frey Inc": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 1,
+      "total": 2,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Glover, Moran and Johnson": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Greer-Holder": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Harper Inc": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Harrell-Walters": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Harrington Inc": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Henderson, Hall and Lutz": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 1,
+      "total": 2,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Hernandez-Rojas": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Hines-Douglas": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Horn and Sons": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Hughes-Clark": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Jackson Inc": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Jones Group": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 3,
+      "total": 4,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 3,
+      "total": 4,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 3,
+      "total": 4,
+      "dominant_sentiment": "neutral"
+    }
+  },
+  "Jones, Davis and Grant": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Kelly-Smith": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Klein LLC": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Lutz-Fleming": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Mann, Myers and Rivera": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Martin LLC": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Martinez-Le": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "negative"
+    }
+  },
+  "Mcgee and Sons": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Mclaughlin-Chandler": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Montoya Group": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Moore-Simon": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Murphy, Marshall and Pope": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Murray, Friedman and Wall": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 2,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "negative"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Namorna Transit Ltd": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "NyanzaRiver Worldwide AS": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "negative"
+    }
+  },
+  "Oka Seafood Shipping Ges.m.b.H.": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Olsen Group": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Phelps, Brown and Wallace": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Phillips-Newton": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "PregolyaDredge Logistics Incorporated": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Ramos-Shelton": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Rasmussen, Nelson and King": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 4,
+      "neutral": 0,
+      "total": 4,
+      "dominant_sentiment": "negative"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Rhodes-Thompson": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Rivas-Stevens": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Rosario-Melendez": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Roth, Logan and Moreno": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Sanchez-Moreno": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Serrano-Cruz": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Smith-Hull": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1,
+      "total": 1,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Solis-Lopez": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Spencer, Richards and Wilson": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1,
+      "total": 1,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Taylor, Prince and Sherman": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Thomas-Weaver": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Thompson-Padilla": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Turner-Green": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Underwood Inc": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "V. Miesel Shipping": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "Lomark Daily": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0,
+      "total": 0,
+      "dominant_sentiment": "neutral"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Valdez, Dalton and Cook": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Vargas-Jensen": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Vasquez, Chaney and Martinez": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "negative"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Walker, Erickson and Blake": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Watson-Gray": {
+    "Haacklee Herald": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Wilcox-Nelson": {
+    "Haacklee Herald": {
+      "positive": 0,
+      "negative": 2,
+      "neutral": 0,
+      "total": 2,
+      "dominant_sentiment": "negative"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "Wu-Hart": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  },
+  "York-Castillo": {
+    "Haacklee Herald": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "Lomark Daily": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    },
+    "The News Buoy": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "total": 1,
+      "dominant_sentiment": "positive"
+    }
+  }
+}

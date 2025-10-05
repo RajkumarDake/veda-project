@@ -1,106 +1,176 @@
 import os
 import json
-from neo4j import GraphDatabase
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request, current_app
 
 neo4j_bp = Blueprint('neo4j', __name__)
 
-# Neo4j connection details from your notebook
-NEO4J_URI = 'neo4j+s://397603d1.databases.neo4j.io'
-NEO4J_USER = 'neo4j'
-NEO4J_PASSWORD = 'dQMr8EoOUknWQK7JNRD5Kd4UtXPlBoXuURrezQ38Tz8'
-
-def get_neo4j_driver():
-    """Get Neo4j driver connection"""
+def get_neo4j_manager():
+    """Get Neo4j manager from app context"""
     try:
-        driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
-        driver.verify_connectivity()
-        return driver
+        # Get from current_app
+        if hasattr(current_app, 'neo4j_manager'):
+            return current_app.neo4j_manager
+            
+        return None
     except Exception as e:
-        print(f"Neo4j connection error: {e}")
+        print(f"Error getting Neo4j manager: {e}")
         return None
 
+# Neo4j API Endpoints for NetworkView
+@neo4j_bp.route('/neo4j/status', methods=['GET'])
+def neo4j_status():
+    """Check Neo4j connection status"""
+    try:
+        neo4j_manager = get_neo4j_manager()
+        if neo4j_manager and neo4j_manager.driver:
+            # Test connection
+            with neo4j_manager.driver.session() as session:
+                result = session.run("RETURN 1 as test")
+                result.single()
+            
+            # Get basic stats
+            stats = neo4j_manager.get_graph_stats()
+            return jsonify({
+                'connected': True,
+                'message': 'Connected to Neo4j',
+                'stats': stats
+            })
+        else:
+            return jsonify({
+                'connected': False,
+                'message': 'Neo4j not configured'
+            })
+    except Exception as e:
+        return jsonify({
+            'connected': False,
+            'message': f'Connection failed: {str(e)}'
+        })
+
+@neo4j_bp.route('/neo4j/graph-data', methods=['GET'])
+def get_graph_data():
+    """Get graph data for NetworkView"""
+    try:
+        neo4j_manager = get_neo4j_manager()
+        if not neo4j_manager:
+            return jsonify({'error': 'Neo4j not configured'}), 500
+        
+        # Get labels (node types)
+        labels = neo4j_manager.get_node_labels()
+        
+        # Get relationship types
+        relationship_types = neo4j_manager.get_relationship_types()
+        
+        # Get sample nodes for each label
+        nodes = {}
+        for label in labels:
+            sample_nodes = neo4j_manager.get_sample_nodes(label, limit=20)
+            nodes[label] = sample_nodes
+        
+        return jsonify({
+            'labels': labels,
+            'relationshipTypes': relationship_types,
+            'nodes': nodes
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@neo4j_bp.route('/neo4j/execute-query', methods=['POST'])
+def execute_neo4j_query():
+    """Execute custom Cypher query"""
+    try:
+        neo4j_manager = get_neo4j_manager()
+        if not neo4j_manager:
+            return jsonify({'error': 'Neo4j not configured'}), 500
+        
+        data = request.get_json()
+        query = data.get('query', '')
+        
+        if not query:
+            return jsonify({'error': 'No query provided'}), 400
+        
+        # Execute query
+        results = neo4j_manager.execute_query(query)
+        return jsonify(results)
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@neo4j_bp.route('/neo4j/load-mc1', methods=['POST'])
+def load_mc1_data():
+    """Load MC1 data into Neo4j"""
+    try:
+        neo4j_manager = get_neo4j_manager()
+        if not neo4j_manager:
+            return jsonify({'error': 'Neo4j not configured'}), 500
+        
+        # Load MC1 data into Neo4j
+        result = neo4j_manager.load_mc1_data_default()
+        return jsonify(result)
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@neo4j_bp.route('/neo4j/search', methods=['GET'])
+def search_neo4j_entities():
+    """Search Neo4j entities"""
+    try:
+        neo4j_manager = get_neo4j_manager()
+        if not neo4j_manager:
+            return jsonify({'error': 'Neo4j not configured'}), 500
+        
+        query_param = request.args.get('q', '')
+        limit = int(request.args.get('limit', 10))
+        
+        if not query_param:
+            return jsonify([])
+        
+        # Search entities
+        results = neo4j_manager.search_entities(query_param, limit)
+        return jsonify(results)
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# Legacy routes for backward compatibility
 @neo4j_bp.route('/neo4j-data', methods=['GET'])
 def get_neo4j_data():
-    """Fetch data from Neo4j cloud database"""
+    """Legacy route - fetch data from Neo4j"""
     try:
-        driver = get_neo4j_driver()
-        if not driver:
+        neo4j_manager = get_neo4j_manager()
+        if not neo4j_manager:
             return jsonify({'error': 'Failed to connect to Neo4j'}), 500
         
-        with driver.session() as session:
-            # Get nodes
-            nodes_result = session.run("MATCH (n) RETURN n LIMIT 1000")
-            nodes = []
-            for record in nodes_result:
-                node_data = dict(record['n'])
-                nodes.append({
-                    'id': node_data.get('id', ''),
-                    'label': node_data.get('name', node_data.get('title', 'Unknown')),
-                    'type': node_data.get('type', 'Unknown'),
-                    'properties': node_data
-                })
-            
-            # Get relationships
-            edges_result = session.run("MATCH (a)-[r]->(b) RETURN a, r, b LIMIT 1000")
-            edges = []
-            for record in edges_result:
-                source_id = dict(record['a']).get('id', '')
-                target_id = dict(record['b']).get('id', '')
-                rel_data = dict(record['r'])
-                
-                edges.append({
-                    'source': source_id,
-                    'target': target_id,
-                    'type': rel_data.get('type', 'RELATED'),
-                    'properties': rel_data
-                })
-            
-            return jsonify({
-                'nodes': nodes,
-                'edges': edges,
-                'total_nodes': len(nodes),
-                'total_edges': len(edges)
-            })
-            
+        # Get subgraph data
+        subgraph = neo4j_manager.get_subgraph(limit=1000)
+        
+        return jsonify({
+            'nodes': subgraph['nodes'],
+            'edges': subgraph['links'],
+            'total_nodes': len(subgraph['nodes']),
+            'total_edges': len(subgraph['links'])
+        })
+        
     except Exception as e:
         print(f"Error fetching Neo4j data: {e}")
         return jsonify({'error': str(e)}), 500
-    finally:
-        if driver:
-            driver.close()
 
 @neo4j_bp.route('/neo4j-stats', methods=['GET'])
 def get_neo4j_stats():
-    """Get Neo4j database statistics"""
+    """Legacy route - get Neo4j database statistics"""
     try:
-        driver = get_neo4j_driver()
-        if not driver:
-            return jsonify({'error': 'Failed to connect to Neo4j'}), 500
+        neo4j_manager = get_neo4j_manager()
+        if not neo4j_manager:
+            return jsonify({'error': 'Failed to connect to Neo4j', 'status': 'disconnected'}), 500
         
-        with driver.session() as session:
-            # Get node count
-            node_count_result = session.run("MATCH (n) RETURN count(n) as count")
-            node_count = node_count_result.single()['count']
-            
-            # Get relationship count
-            rel_count_result = session.run("MATCH ()-[r]->() RETURN count(r) as count")
-            rel_count = rel_count_result.single()['count']
-            
-            # Get node types
-            node_types_result = session.run("MATCH (n) RETURN DISTINCT labels(n) as labels")
-            node_types = [record['labels'][0] if record['labels'] else 'Unknown' for record in node_types_result]
-            
-            return jsonify({
-                'node_count': node_count,
-                'relationship_count': rel_count,
-                'node_types': list(set(node_types)),
-                'status': 'connected'
-            })
-            
+        stats = neo4j_manager.get_graph_stats()
+        
+        return jsonify({
+            'node_count': stats.get('total_nodes', 0),
+            'relationship_count': stats.get('total_relationships', 0),
+            'node_types': [nt.get('label', 'Unknown') for nt in stats.get('node_types', [])],
+            'status': 'connected'
+        })
+        
     except Exception as e:
         print(f"Error getting Neo4j stats: {e}")
         return jsonify({'error': str(e), 'status': 'disconnected'}), 500
-    finally:
-        if driver:
-            driver.close()

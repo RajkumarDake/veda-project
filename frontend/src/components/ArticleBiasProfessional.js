@@ -201,7 +201,104 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
           border: `1px solid ${COLORS.border}`,
           marginTop: '20px'
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.125rem', fontWeight: '600' }}>🎛️ Advanced Filters</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.125rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f8fafc';
+                e.target.style.borderColor = '#3b82f6';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🎛️ Advanced Filters
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#3b82f6',
+                fontWeight: '500',
+                background: 'rgba(59, 130, 246, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '400px',
+              minWidth: '300px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🎛️</span>
+                Advanced Filters
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Sophisticated filtering controls for article analysis including sentiment, journal, and temporal filters.
+              </div>
+              <div style={{ 
+                background: 'rgba(59, 130, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(59, 130, 246, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#3b82f6', marginBottom: '4px' }}>
+                  🔍 FILTER OPTIONS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Sentiment Analysis • Journal Sources • Date Ranges • Entity Mentions
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', alignItems: 'end' }}>
             <div>
               <label style={{ 
@@ -386,7 +483,104 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📰 Article Distribution</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#fef3c7';
+                e.target.style.borderColor = '#f59e0b';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              📰 Article Distribution
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#f59e0b',
+                fontWeight: '500',
+                background: 'rgba(245, 158, 11, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)',
+              border: '1px solid #fed7aa',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '400px',
+              minWidth: '300px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📰</span>
+                Article Distribution
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Pie chart visualization showing the distribution of articles across different sentiment categories.
+              </div>
+              <div style={{ 
+                background: 'rgba(245, 158, 11, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(245, 158, 11, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                  📊 SENTIMENT CATEGORIES
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Positive • Negative • Neutral sentiment classifications with percentage breakdown
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
@@ -414,7 +608,104 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📊 Sentiment by Journal</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#ecfdf5';
+                e.target.style.borderColor = '#10b981';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              📊 Sentiment by Journal
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#10b981',
+                fontWeight: '500',
+                background: 'rgba(16, 185, 129, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+              border: '1px solid #bbf7d0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📊</span>
+                Sentiment by Journal
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Bar chart comparing sentiment distributions across different news journals and publications.
+              </div>
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(16, 185, 129, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                  📰 JOURNAL COMPARISON
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Haacklee Herald • Lomark Daily • The News Buoy sentiment analysis
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={sentimentByJournal}>
               <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -439,7 +730,104 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🏢 Company Sentiment Analysis</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f3e8ff';
+                e.target.style.borderColor = '#8b5cf6';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🏢 Company Sentiment Analysis
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#8b5cf6',
+                fontWeight: '500',
+                background: 'rgba(139, 92, 246, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
+              border: '1px solid #e9d5ff',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🏢</span>
+                Company Sentiment Analysis
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Detailed sentiment analysis for companies with significant media coverage and mention frequency.
+              </div>
+              <div style={{ 
+                background: 'rgba(139, 92, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(139, 92, 246, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#8b5cf6', marginBottom: '4px' }}>
+                  🎯 ANALYSIS CRITERIA
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Companies with 3+ mentions • Sentiment scoring • Coverage frequency analysis
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ marginBottom: '16px', color: '#6B7280', fontSize: '0.875rem' }}>
             Companies with 3+ mentions: {companySentimentData.length} total
           </div>
@@ -521,7 +909,104 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📈 Temporal Analysis</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f0f9ff';
+                e.target.style.borderColor = '#0ea5e9';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(14, 165, 233, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              📈 Temporal Analysis
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#0ea5e9',
+                fontWeight: '500',
+                background: 'rgba(14, 165, 233, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)',
+              border: '1px solid #bae6fd',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📈</span>
+                Temporal Analysis
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Time-series analysis showing sentiment trends and article publication patterns over time.
+              </div>
+              <div style={{ 
+                background: 'rgba(14, 165, 233, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(14, 165, 233, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#0ea5e9', marginBottom: '4px' }}>
+                  📅 TIME TRENDS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Monthly sentiment evolution • Publication frequency • Trend analysis
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={temporalData}>
               <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -544,7 +1029,104 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🎯 Journal Bias Detection</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#fef2f2';
+                e.target.style.borderColor = '#ef4444';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(239, 68, 68, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🎯 Journal Bias Detection
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#ef4444',
+                fontWeight: '500',
+                background: 'rgba(239, 68, 68, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #fef2f2 100%)',
+              border: '1px solid #fecaca',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🎯</span>
+                Journal Bias Detection
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Radar chart analysis detecting potential bias patterns across different news journals and publications.
+              </div>
+              <div style={{ 
+                background: 'rgba(239, 68, 68, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(239, 68, 68, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#ef4444', marginBottom: '4px' }}>
+                  🔍 BIAS METRICS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Sentiment bias • Coverage patterns • Entity focus • Reporting frequency
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={300}>
             <RadarChart data={journals.map(journal => ({
               journal,
@@ -587,7 +1169,7 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
         </div>
       </div>
 
-      {/* Analysis Insights Summary */}
+      {/* Parallel Coordinates Plot */}
       <div style={{ 
         background: 'white', 
         padding: '24px', 
@@ -596,84 +1178,369 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
         border: `1px solid ${COLORS.border}`,
         marginBottom: '24px'
       }}>
-        <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🔍 Key Insights</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
-          {/* Most Biased Journal */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, #FEF3C7, #FDE68A)', 
-            padding: '16px', 
-            borderRadius: '8px',
-            border: '1px solid #F59E0B'
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <h3 
+            style={{ 
+              color: COLORS.dark, 
+              marginBottom: '16px', 
+              fontSize: '1.25rem', 
+              fontWeight: '600',
+              cursor: 'help',
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '8px 12px',
+              borderRadius: '8px',
+              transition: 'all 0.3s ease',
+              border: '2px solid transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#f3e8ff';
+              e.target.style.borderColor = '#8b5cf6';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.15)';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'block';
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(0)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'transparent';
+              e.target.style.borderColor = 'transparent';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'none';
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translateY(-10px)';
+              }
+            }}
+          >
+            📊 Parallel Coordinates Analysis
+            <span style={{
+              marginLeft: '8px',
+              fontSize: '0.8rem',
+              color: '#8b5cf6',
+              fontWeight: '500',
+              background: 'rgba(139, 92, 246, 0.1)',
+              padding: '2px 6px',
+              borderRadius: '4px'
+            }}>ℹ️</span>
+          </h3>
+          <div style={{
+            position: 'absolute',
+            top: '100%',
+            left: '0',
+            zIndex: 1000,
+            background: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
+            border: '1px solid #e9d5ff',
+            borderRadius: '12px',
+            padding: '16px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            maxWidth: '500px',
+            minWidth: '400px',
+            display: 'none',
+            opacity: '0',
+            transform: 'translateY(-10px)',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(10px)'
           }}>
-            <div style={{ fontWeight: '600', color: '#92400E', marginBottom: '8px' }}>📊 Most Biased Journal</div>
-            <div style={{ fontSize: '1.25rem', fontWeight: '700', color: '#92400E' }}>
-              {Object.entries(biasMetrics).reduce((max, [journal, metrics]) => 
-                metrics.biasScore > (biasMetrics[max]?.biasScore || 0) ? journal : max, 
-                'Haacklee Herald'
-              )}
+            <div style={{ 
+              fontSize: '0.9rem', 
+              fontWeight: '600', 
+              color: '#1f2937', 
+              marginBottom: '8px',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📊</span>
+              Parallel Coordinates Analysis
             </div>
-            <div style={{ fontSize: '0.875rem', color: '#92400E', marginTop: '4px' }}>
-              Bias Score: {Math.max(...Object.values(biasMetrics).map(m => m.biasScore)).toFixed(3)}
+            <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+              Multi-dimensional visualization showing relationships between different bias metrics across journals simultaneously.
+            </div>
+            <div style={{ 
+              background: 'rgba(139, 92, 246, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(139, 92, 246, 0.1)',
+              marginBottom: '8px'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#8b5cf6', marginBottom: '4px' }}>
+                📏 DIMENSIONS
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Positive Ratio • Negative Ratio • Bias Score • Coverage • Entity Focus
+              </div>
+            </div>
+            <div style={{ 
+              background: 'rgba(139, 92, 246, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(139, 92, 246, 0.1)'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#8b5cf6', marginBottom: '4px' }}>
+                🎯 ANALYSIS GOAL
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Identify patterns and correlations between multiple bias indicators across different journals
+              </div>
             </div>
           </div>
-
-          {/* Most Positive Coverage */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, #D1FAE5, #A7F3D0)', 
-            padding: '16px', 
-            borderRadius: '8px',
-            border: '1px solid #10B981'
-          }}>
-            <div style={{ fontWeight: '600', color: '#065F46', marginBottom: '8px' }}>✅ Most Positive Coverage</div>
-            <div style={{ fontSize: '1.25rem', fontWeight: '700', color: '#065F46' }}>
-              {Object.entries(biasMetrics).reduce((max, [journal, metrics]) => 
-                metrics.positiveRatio > (biasMetrics[max]?.positiveRatio || 0) ? journal : max, 
-                'Haacklee Herald'
-              )}
+        </div>
+        <p style={{ color: '#6B7280', marginBottom: '20px', fontSize: '0.9rem' }}>
+          Multi-dimensional view of bias metrics across journals showing relationships between different bias indicators
+        </p>
+        
+        <div style={{ height: '450px', width: '100%', overflowX: 'auto', position: 'relative' }}>
+          <svg width="100%" height="100%" viewBox="0 0 1200 450" style={{ minWidth: '1200px' }}>
+            {/* Background */}
+            <rect width="100%" height="100%" fill="white" />
+            
+            {/* Tooltip */}
+            <g id="tooltip" style={{ display: 'none', pointerEvents: 'none' }}>
+              <rect x="0" y="0" width="200" height="80" fill="rgba(0,0,0,0.9)" rx="8" />
+              <text x="10" y="20" fill="white" fontSize="12" fontWeight="600" id="tooltip-title"></text>
+              <text x="10" y="40" fill="white" fontSize="11" id="tooltip-dimension"></text>
+              <text x="10" y="55" fill="white" fontSize="11" id="tooltip-value"></text>
+              <text x="10" y="70" fill="white" fontSize="11" id="tooltip-total"></text>
+            </g>
+            
+            {/* Custom parallel coordinates lines */}
+            {Object.entries(biasMetrics).map(([journal, metrics], index) => {
+              const colors = ['#ef4444', '#3b82f6', '#10b981'];
+              const color = colors[index % colors.length];
+              
+              const coordinates = [
+                { x: 0, y: metrics.biasScore * 100, label: 'Bias Score', value: (metrics.biasScore * 100).toFixed(1) + '%' },
+                { x: 1, y: metrics.positiveRatio * 100, label: 'Positive %', value: (metrics.positiveRatio * 100).toFixed(1) + '%' },
+                { x: 2, y: metrics.negativeRatio * 100, label: 'Negative %', value: (metrics.negativeRatio * 100).toFixed(1) + '%' },
+                { x: 3, y: Math.min(metrics.total, 100), label: 'Articles', value: metrics.total + ' articles' },
+                { x: 4, y: Math.abs(metrics.positiveRatio - metrics.negativeRatio) * 100, label: 'Balance', value: (Math.abs(metrics.positiveRatio - metrics.negativeRatio) * 100).toFixed(1) + '%' }
+              ];
+              
+              return (
+                <g key={journal}>
+                  {/* Draw connecting lines with hover */}
+                  {coordinates.slice(0, -1).map((coord, i) => {
+                    const nextCoord = coordinates[i + 1];
+                    const x1 = 120 + (coord.x * 240);
+                    const y1 = 350 - (coord.y * 2.5);
+                    const x2 = 120 + (nextCoord.x * 240);
+                    const y2 = 350 - (nextCoord.y * 2.5);
+                    
+                    return (
+                      <line
+                        key={i}
+                        x1={x1}
+                        y1={y1}
+                        x2={x2}
+                        y2={y2}
+                        stroke={color}
+                        strokeWidth={4}
+                        opacity={0.8}
+                        style={{ 
+                          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))',
+                          transition: 'all 0.3s ease',
+                          cursor: 'pointer'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.strokeWidth = '6';
+                          e.target.style.opacity = '1';
+                          const tooltip = document.getElementById('tooltip');
+                          const tooltipTitle = document.getElementById('tooltip-title');
+                          const tooltipDimension = document.getElementById('tooltip-dimension');
+                          const tooltipValue = document.getElementById('tooltip-value');
+                          const tooltipTotal = document.getElementById('tooltip-total');
+                          
+                          tooltipTitle.textContent = journal;
+                          tooltipDimension.textContent = `${coord.label} → ${nextCoord.label}`;
+                          tooltipValue.textContent = `${coord.value} → ${nextCoord.value}`;
+                          tooltipTotal.textContent = `Total Articles: ${metrics.total}`;
+                          
+                          tooltip.style.display = 'block';
+                          tooltip.setAttribute('transform', `translate(${Math.min(e.clientX - 100, 1000)}, ${Math.max(e.clientY - 100, 10)})`);
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.strokeWidth = '4';
+                          e.target.style.opacity = '0.8';
+                          document.getElementById('tooltip').style.display = 'none';
+                        }}
+                      />
+                    );
+                  })}
+                  
+                  {/* Draw points with hover */}
+                  {coordinates.map((coord, i) => {
+                    const x = 120 + (coord.x * 240);
+                    const y = 350 - (coord.y * 2.5);
+                    
+                    return (
+                      <circle
+                        key={i}
+                        cx={x}
+                        cy={y}
+                        r={8}
+                        fill={color}
+                        stroke="white"
+                        strokeWidth={3}
+                        style={{ 
+                          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.r = '12';
+                          e.target.style.strokeWidth = '4';
+                          const tooltip = document.getElementById('tooltip');
+                          const tooltipTitle = document.getElementById('tooltip-title');
+                          const tooltipDimension = document.getElementById('tooltip-dimension');
+                          const tooltipValue = document.getElementById('tooltip-value');
+                          const tooltipTotal = document.getElementById('tooltip-total');
+                          
+                          tooltipTitle.textContent = journal;
+                          tooltipDimension.textContent = coord.label;
+                          tooltipValue.textContent = coord.value;
+                          tooltipTotal.textContent = `Total Articles: ${metrics.total}`;
+                          
+                          tooltip.style.display = 'block';
+                          tooltip.setAttribute('transform', `translate(${Math.min(x + 20, 1000)}, ${Math.max(y - 90, 10)})`);
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.r = '8';
+                          e.target.style.strokeWidth = '3';
+                          document.getElementById('tooltip').style.display = 'none';
+                        }}
+                      />
+                    );
+                  })}
+                </g>
+              );
+            })}
+            
+            {/* Axis lines and labels */}
+            <g>
+              {['Bias Score', 'Positive %', 'Negative %', 'Articles', 'Balance'].map((label, i) => (
+                <g key={label}>
+                  {/* Vertical axis lines */}
+                  <line
+                    x1={120 + (i * 240)}
+                    y1={60}
+                    x2={120 + (i * 240)}
+                    y2={350}
+                    stroke="#e5e7eb"
+                    strokeWidth={3}
+                  />
+                  
+                  {/* Axis labels */}
+                  <text
+                    x={120 + (i * 240)}
+                    y={45}
+                    textAnchor="middle"
+                    fill="#374151"
+                    fontSize="16"
+                    fontWeight="700"
+                  >
+                    {label}
+                  </text>
+                  
+                  {/* Scale markers */}
+                  {[0, 25, 50, 75, 100].map(value => (
+                    <g key={value}>
+                      <line
+                        x1={110 + (i * 240)}
+                        y1={350 - (value * 2.5)}
+                        x2={130 + (i * 240)}
+                        y2={350 - (value * 2.5)}
+                        stroke="#9ca3af"
+                        strokeWidth={2}
+                      />
+                      <text
+                        x={100 + (i * 240)}
+                        y={355 - (value * 2.5)}
+                        textAnchor="end"
+                        fill="#6b7280"
+                        fontSize="12"
+                        fontWeight="500"
+                      >
+                        {value}
+                      </text>
+                      
+                      {/* Grid lines */}
+                      <line
+                        x1={120 + (i * 240)}
+                        y1={350 - (value * 2.5)}
+                        x2={120 + ((i + 1) * 240)}
+                        y2={350 - (value * 2.5)}
+                        stroke="#f3f4f6"
+                        strokeWidth={1}
+                        opacity={0.5}
+                        style={{ display: i < 4 ? 'block' : 'none' }}
+                      />
+                    </g>
+                  ))}
+                </g>
+              ))}
+            </g>
+            
+            {/* Legend */}
+            <g transform="translate(120, 390)">
+              <rect x="-10" y="-10" width="960" height="50" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1" rx="8" />
+              {Object.keys(biasMetrics).map((journal, index) => {
+                const colors = ['#ef4444', '#3b82f6', '#10b981'];
+                const color = colors[index % colors.length];
+                
+                return (
+                  <g key={journal} transform={`translate(${index * 320}, 15)`}>
+                    <circle cx={0} cy={0} r={8} fill={color} stroke="white" strokeWidth={2} />
+                    <text x={20} y={6} fill="#374151" fontSize="14" fontWeight="600">
+                      {journal}
+                    </text>
+                  </g>
+                );
+              })}
+            </g>
+            
+            {/* Title overlay */}
+            <text x="600" y="25" textAnchor="middle" fill="#1f2937" fontSize="18" fontWeight="700">
+              Multi-Dimensional Bias Analysis Across Journals
+            </text>
+          </svg>
+        </div>
+        
+        {/* Interpretation Guide */}
+        <div style={{ 
+          marginTop: '20px', 
+          padding: '16px', 
+          background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)',
+          borderRadius: '8px',
+          border: '1px solid #e2e8f0'
+        }}>
+          <h4 style={{ color: COLORS.dark, marginBottom: '12px', fontSize: '1rem', fontWeight: '600' }}>
+            📖 How to Read This Chart
+          </h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+            <div style={{ fontSize: '0.85rem', color: '#4b5563' }}>
+              <strong>Bias Score:</strong> Overall bias intensity (0-100)
             </div>
-            <div style={{ fontSize: '0.875rem', color: '#065F46', marginTop: '4px' }}>
-              {Math.round(Math.max(...Object.values(biasMetrics).map(m => m.positiveRatio)) * 100)}% positive articles
+            <div style={{ fontSize: '0.85rem', color: '#4b5563' }}>
+              <strong>Positive %:</strong> Percentage of positive articles
             </div>
-          </div>
-
-          {/* Coverage Distribution */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, #E0E7FF, #C7D2FE)', 
-            padding: '16px', 
-            borderRadius: '8px',
-            border: '1px solid #3B82F6'
-          }}>
-            <div style={{ fontWeight: '600', color: '#1E40AF', marginBottom: '8px' }}>📈 Coverage Analysis</div>
-            <div style={{ fontSize: '1.25rem', fontWeight: '700', color: '#1E40AF' }}>
-              {filteredArticles.length} Articles
+            <div style={{ fontSize: '0.85rem', color: '#4b5563' }}>
+              <strong>Negative %:</strong> Percentage of negative articles
             </div>
-            <div style={{ fontSize: '0.875rem', color: '#1E40AF', marginTop: '4px' }}>
-              {new Set(filteredArticles.flatMap(a => a.entities)).size} unique entities mentioned
+            <div style={{ fontSize: '0.85rem', color: '#4b5563' }}>
+              <strong>Articles:</strong> Total article count (normalized)
             </div>
-          </div>
-
-          {/* Sentiment Balance */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, #F3E8FF, #E9D5FF)', 
-            padding: '16px', 
-            borderRadius: '8px',
-            border: '1px solid #8B5CF6'
-          }}>
-            <div style={{ fontWeight: '600', color: '#5B21B6', marginBottom: '8px' }}>⚖️ Sentiment Balance</div>
-            <div style={{ fontSize: '1.25rem', fontWeight: '700', color: '#5B21B6' }}>
-              {filteredArticles.length > 0 ? 
-                Math.abs(
-                  filteredArticles.filter(a => a.sentiment === 'positive').length - 
-                  filteredArticles.filter(a => a.sentiment === 'negative').length
-                ) : 0
-              } Article Gap
-            </div>
-            <div style={{ fontSize: '0.875rem', color: '#5B21B6', marginTop: '4px' }}>
-              Between positive and negative coverage
+            <div style={{ fontSize: '0.85rem', color: '#4b5563' }}>
+              <strong>Balance:</strong> Sentiment balance difference
             </div>
           </div>
         </div>
       </div>
+
     </div>
   );
 };

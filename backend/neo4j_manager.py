@@ -229,4 +229,89 @@ class Neo4jManager:
             print(f"Error searching entities: {e}")
             return []
 
+    def get_node_labels(self):
+        """Get all node labels in the database"""
+        if not self.driver:
+            return []
+        try:
+            records, _, _ = self.driver.execute_query("CALL db.labels()")
+            return [record['label'] for record in records]
+        except Exception as e:
+            print(f"Error getting node labels: {e}")
+            return []
+
+    def get_relationship_types(self):
+        """Get all relationship types in the database"""
+        if not self.driver:
+            return []
+        try:
+            records, _, _ = self.driver.execute_query("CALL db.relationshipTypes()")
+            return [record['relationshipType'] for record in records]
+        except Exception as e:
+            print(f"Error getting relationship types: {e}")
+            return []
+
+    def get_sample_nodes(self, label, limit=20):
+        """Get sample nodes for a given label"""
+        if not self.driver:
+            return []
+        try:
+            query = f"MATCH (n:{label}) RETURN n LIMIT $limit"
+            records, _, _ = self.driver.execute_query(query, limit=limit)
+            nodes = []
+            for record in records:
+                node_data = record['n']
+                nodes.append({
+                    'id': node_data.element_id,
+                    'properties': dict(node_data)
+                })
+            return nodes
+        except Exception as e:
+            print(f"Error getting sample nodes for {label}: {e}")
+            return []
+
+    def execute_query(self, query):
+        """Execute a custom Cypher query and return results"""
+        if not self.driver:
+            return {'records': [], 'summary': None}
+        try:
+            records, summary, keys = self.driver.execute_query(query)
+            result_records = []
+            for record in records:
+                record_dict = {}
+                for key in keys:
+                    value = record[key]
+                    # Convert Neo4j objects to dictionaries
+                    if hasattr(value, '__dict__'):
+                        record_dict[key] = dict(value)
+                    else:
+                        record_dict[key] = value
+                result_records.append(record_dict)
+            
+            return {
+                'records': result_records,
+                'summary': {
+                    'query_type': summary.query_type if hasattr(summary, 'query_type') else None,
+                    'counters': dict(summary.counters) if hasattr(summary, 'counters') else {}
+                }
+            }
+        except Exception as e:
+            print(f"Error executing query: {e}")
+            return {'records': [], 'error': str(e)}
+
+    def load_mc1_data_default(self):
+        """Load MC1 data from the default file location"""
+        mc1_file_path = os.path.join(os.path.dirname(__file__), '..', 'mc1.json')
+        if self.load_mc1_data(mc1_file_path):
+            stats = self.get_graph_stats()
+            return {
+                'success': True,
+                'message': 'MC1 data loaded successfully',
+                'stats': stats
+            }
+        else:
+            return {
+                'success': False,
+                'message': 'Failed to load MC1 data'
+            }
 

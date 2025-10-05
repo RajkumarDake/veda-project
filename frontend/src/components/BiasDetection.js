@@ -164,7 +164,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis, data }) => {
           borderRadius: '12px', 
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.125rem', fontWeight: '600' }}>🎛️ Advanced Detection Controls</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.125rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f8fafc';
+                e.target.style.borderColor = '#3b82f6';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🎛️ Advanced Detection Controls
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#3b82f6',
+                fontWeight: '500',
+                background: 'rgba(59, 130, 246, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+              border: '1px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🎛️</span>
+                Advanced Detection Controls
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Configure AI-powered bias detection algorithms, thresholds, and analysis parameters for optimal detection accuracy.
+              </div>
+              <div style={{ 
+                background: 'rgba(59, 130, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(59, 130, 246, 0.1)',
+                marginBottom: '8px'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#3b82f6', marginBottom: '4px' }}>
+                  🤖 AI ALGORITHMS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Neural Networks • Deep Learning NLP • Ensemble Methods • Transformer Models
+                </div>
+              </div>
+              <div style={{ 
+                background: 'rgba(59, 130, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(59, 130, 246, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#3b82f6', marginBottom: '4px' }}>
+                  📊 DETECTION MODES
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Real-time Analysis • Batch Processing • Predictive Modeling
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', alignItems: 'end' }}>
             <div>
               <label style={{ 
@@ -337,7 +448,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis, data }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🎯 Entity Bias Matrix</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#fef3c7';
+                e.target.style.borderColor = '#f59e0b';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🎯 Entity Bias Matrix
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#f59e0b',
+                fontWeight: '500',
+                background: 'rgba(245, 158, 11, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)',
+              border: '1px solid #fed7aa',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🎯</span>
+                Entity Bias Matrix
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Scatter plot visualization showing the relationship between entity reliability and bias scores for comprehensive bias assessment.
+              </div>
+              <div style={{ 
+                background: 'rgba(245, 158, 11, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(245, 158, 11, 0.1)',
+                marginBottom: '8px'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                  📊 MATRIX AXES
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  X-Axis: Reliability Score • Y-Axis: Bias Score • Color: Bias Level Intensity
+                </div>
+              </div>
+              <div style={{ 
+                background: 'rgba(245, 158, 11, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(245, 158, 11, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                  🎯 ANALYSIS GOAL
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Identify entities with high bias but low reliability for targeted investigation
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={350}>
             <ScatterChart data={filteredBiasData}>
               <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -385,7 +607,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis, data }) => {
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
           border: `1px solid ${COLORS.border}`
         }}>
-          <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🤖 AI Model Performance</h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: COLORS.dark, 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#f3e8ff';
+                e.target.style.borderColor = '#8b5cf6';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🤖 AI Model Performance
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#8b5cf6',
+                fontWeight: '500',
+                background: 'rgba(139, 92, 246, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
+              border: '1px solid #e9d5ff',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '480px',
+              minWidth: '380px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🤖</span>
+                AI Model Performance
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Radar chart displaying performance metrics for different AI algorithms used in bias detection and analysis.
+              </div>
+              <div style={{ 
+                background: 'rgba(139, 92, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(139, 92, 246, 0.1)',
+                marginBottom: '8px'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#8b5cf6', marginBottom: '4px' }}>
+                  📊 PERFORMANCE METRICS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Accuracy • Precision • Recall • F1-Score • Confidence Level
+                </div>
+              </div>
+              <div style={{ 
+                background: 'rgba(139, 92, 246, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(139, 92, 246, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#8b5cf6', marginBottom: '4px' }}>
+                  🧠 AI MODELS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                  Neural Network • Deep Learning NLP • Ensemble Methods • Transformer Models
+                </div>
+              </div>
+            </div>
+          </div>
           <ResponsiveContainer width="100%" height={350}>
             <RadarChart data={advancedBiasData.algorithmMetrics}>
               <PolarGrid stroke={COLORS.border} />
@@ -436,7 +769,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis, data }) => {
         border: `1px solid ${COLORS.border}`,
         marginBottom: '24px'
       }}>
-        <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📈 Temporal Bias Evolution</h3>
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <h3 
+            style={{ 
+              color: COLORS.dark, 
+              marginBottom: '16px', 
+              fontSize: '1.25rem', 
+              fontWeight: '600',
+              cursor: 'help',
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '8px 12px',
+              borderRadius: '8px',
+              transition: 'all 0.3s ease',
+              border: '2px solid transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#ecfdf5';
+              e.target.style.borderColor = '#10b981';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.15)';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'block';
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(0)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'transparent';
+              e.target.style.borderColor = 'transparent';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+              const tooltip = e.target.nextElementSibling;
+              if (tooltip) {
+                tooltip.style.display = 'none';
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translateY(-10px)';
+              }
+            }}
+          >
+            📈 Temporal Bias Evolution
+            <span style={{
+              marginLeft: '8px',
+              fontSize: '0.8rem',
+              color: '#10b981',
+              fontWeight: '500',
+              background: 'rgba(16, 185, 129, 0.1)',
+              padding: '2px 6px',
+              borderRadius: '4px'
+            }}>ℹ️</span>
+          </h3>
+          <div style={{
+            position: 'absolute',
+            top: '100%',
+            left: '0',
+            zIndex: 1000,
+            background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+            border: '1px solid #bbf7d0',
+            borderRadius: '12px',
+            padding: '16px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            maxWidth: '480px',
+            minWidth: '380px',
+            display: 'none',
+            opacity: '0',
+            transform: 'translateY(-10px)',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ 
+              fontSize: '0.9rem', 
+              fontWeight: '600', 
+              color: '#1f2937', 
+              marginBottom: '8px',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📈</span>
+              Temporal Bias Evolution
+            </div>
+            <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+              Composed chart showing how bias patterns evolve over time with article volume and anomaly detection indicators.
+            </div>
+            <div style={{ 
+              background: 'rgba(16, 185, 129, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(16, 185, 129, 0.1)',
+              marginBottom: '8px'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                📊 CHART LAYERS
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Area: Bias Score Trend • Bars: Article Volume • Line: Anomaly Count
+              </div>
+            </div>
+            <div style={{ 
+              background: 'rgba(16, 185, 129, 0.05)', 
+              padding: '8px 12px', 
+              borderRadius: '6px',
+              border: '1px solid rgba(16, 185, 129, 0.1)'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                🎯 ANALYSIS FOCUS
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
+                Track bias evolution patterns and correlate with article publication volumes and detected anomalies
+              </div>
+            </div>
+          </div>
+        </div>
         <ResponsiveContainer width="100%" height={400}>
           <ComposedChart data={advancedBiasData.temporalBias}>
             <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
