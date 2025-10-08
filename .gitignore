@@ -75,3 +75,4 @@ dist/
 # Backup files
 *.bak
 *.backup
+.env
