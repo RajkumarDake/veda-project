@@ -1065,7 +1065,7 @@ const AnalystBias = ({ networkData, data, mc1BiasAnalysis }) => {
               Multi-Dimensional Analyst Analysis
             </div>
             <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
-              Parallel coordinates visualization showing relationships between 5 key analyst performance metrics simultaneously.
+              Parallel coordinates visualization showing relationships between 4 key analyst performance metrics simultaneously.
             </div>
             <div style={{ 
               background: 'rgba(139, 92, 246, 0.05)', 
@@ -1078,7 +1078,7 @@ const AnalystBias = ({ networkData, data, mc1BiasAnalysis }) => {
                 📏 DIMENSIONS
               </div>
               <div style={{ fontSize: '0.75rem', color: '#1f2937' }}>
-                Experience (years) • Reliability (0-100%) • Objectivity (100% - bias) • Trust Level • Performance
+                Reliability (0-100%) • Objectivity (100% - bias) • Trust Level • Performance
               </div>
             </div>
             <div style={{ 
@@ -1122,11 +1122,10 @@ const AnalystBias = ({ networkData, data, mc1BiasAnalysis }) => {
                            analyst.bias > 0.5 ? COLORS.warning : COLORS.primary;
               
               const coordinates = [
-                { x: 0, y: analyst.experience * 10, label: 'Experience', value: `${analyst.experience} years` },
-                { x: 1, y: analyst.reliability * 100, label: 'Reliability', value: `${(analyst.reliability * 100).toFixed(1)}%` },
-                { x: 2, y: (1 - analyst.bias) * 100, label: 'Objectivity', value: `${((1 - analyst.bias) * 100).toFixed(1)}%` },
-                { x: 3, y: analyst.suspicious ? 20 : 80, label: 'Trust Level', value: analyst.suspicious ? 'Suspicious' : 'Trusted' },
-                { x: 4, y: Math.random() * 100, label: 'Performance', value: `${(Math.random() * 100).toFixed(1)}%` }
+                { x: 0, y: analyst.reliability * 100, label: 'Reliability', value: `${(analyst.reliability * 100).toFixed(1)}%` },
+                { x: 1, y: (1 - analyst.bias) * 100, label: 'Objectivity', value: `${((1 - analyst.bias) * 100).toFixed(1)}%` },
+                { x: 2, y: analyst.suspicious ? 20 : 80, label: 'Trust Level', value: analyst.suspicious ? 'Suspicious' : 'Trusted' },
+                { x: 3, y: Math.random() * 100, label: 'Performance', value: `${(Math.random() * 100).toFixed(1)}%` }
               ];
               
               return (
@@ -1213,7 +1212,7 @@ const AnalystBias = ({ networkData, data, mc1BiasAnalysis }) => {
                           tooltipRole.textContent = analyst.role;
                           tooltipDimension.textContent = coord.label;
                           tooltipValue.textContent = `Value: ${coord.value}`;
-                          tooltipStatus.textContent = `${analyst.suspicious ? '🚨 Suspicious' : '✅ Trusted'} | Experience: ${analyst.experience}y | Reliability: ${(analyst.reliability * 100).toFixed(1)}%`;
+                          tooltipStatus.textContent = `${analyst.suspicious ? '🚨 Suspicious' : '✅ Trusted'} | Reliability: ${(analyst.reliability * 100).toFixed(1)}%`;
                           
                           tooltip.style.display = 'block';
                           tooltip.setAttribute('transform', `translate(${Math.min(x + 20, 1180)}, ${Math.max(y - 110, 10)})`);
@@ -1232,7 +1231,7 @@ const AnalystBias = ({ networkData, data, mc1BiasAnalysis }) => {
             
             {/* Axis lines and labels */}
             <g>
-              {['Experience', 'Reliability', 'Objectivity', 'Trust Level', 'Performance'].map((label, i) => (
+              {['Reliability', 'Objectivity', 'Trust Level', 'Performance'].map((label, i) => (
                 <g key={label}>
                   {/* Vertical axis lines */}
                   <line
@@ -1275,8 +1274,7 @@ const AnalystBias = ({ networkData, data, mc1BiasAnalysis }) => {
                         fontSize="12"
                         fontWeight="500"
                       >
-                        {i === 0 ? Math.round(value / 10) : value}
-                        {i === 0 ? 'y' : '%'}
+                        {value}%
                       </text>
                     </g>
                   ))}

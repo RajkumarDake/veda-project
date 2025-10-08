@@ -52,6 +52,95 @@ const NetworkView = () => {
     default: { background: '#6b7280', border: '#374151' }
   };
 
+  // Color palette for relationship edges - All 13 relationship types with distinct colors
+  const relationshipColors = {
+    // 1. Invest - Dark Green
+    Invest: { color: '#059669', highlight: '#047857', width: 2.5 },
+    invest: { color: '#059669', highlight: '#047857', width: 2.5 },
+    INVEST: { color: '#059669', highlight: '#047857', width: 2.5 },
+    
+    // 2. Aid - Light Green
+    Aid: { color: '#22c55e', highlight: '#16a34a', width: 2.5 },
+    aid: { color: '#22c55e', highlight: '#16a34a', width: 2.5 },
+    AID: { color: '#22c55e', highlight: '#16a34a', width: 2.5 },
+    
+    // 3. Transaction - Yellow
+    Transaction: { color: '#eab308', highlight: '#ca8a04', width: 2.5 },
+    transaction: { color: '#eab308', highlight: '#ca8a04', width: 2.5 },
+    TRANSACTION: { color: '#eab308', highlight: '#ca8a04', width: 2.5 },
+    
+    // 4. SustainableFishing - Emerald Green (positive environmental action)
+    SustainableFishing: { color: '#10b981', highlight: '#059669', width: 2.5 },
+    sustainable_fishing: { color: '#10b981', highlight: '#059669', width: 2.5 },
+    SUSTAINABLE_FISHING: { color: '#10b981', highlight: '#059669', width: 2.5 },
+    
+    // 5. Fishing - Cyan
+    Fishing: { color: '#0891b2', highlight: '#0e7490', width: 2.5 },
+    fishing: { color: '#0891b2', highlight: '#0e7490', width: 2.5 },
+    FISHING: { color: '#0891b2', highlight: '#0e7490', width: 2.5 },
+    
+    // 6. Conference - Purple
+    Conference: { color: '#8b5cf6', highlight: '#7c3aed', width: 2.5 },
+    conference: { color: '#8b5cf6', highlight: '#7c3aed', width: 2.5 },
+    CONFERENCE: { color: '#8b5cf6', highlight: '#7c3aed', width: 2.5 },
+    
+    // 7. OverFishing - Red
+    OverFishing: { color: '#ef4444', highlight: '#dc2626', width: 2.5 },
+    overfishing: { color: '#ef4444', highlight: '#dc2626', width: 2.5 },
+    OVER_FISHING: { color: '#ef4444', highlight: '#dc2626', width: 2.5 },
+    
+    // 8. Criticize - Orange
+    Criticize: { color: '#f97316', highlight: '#ea580c', width: 2.5 },
+    criticize: { color: '#f97316', highlight: '#ea580c', width: 2.5 },
+    CRITICIZE: { color: '#f97316', highlight: '#ea580c', width: 2.5 },
+    
+    // 9. PartiallyOwns - Violet
+    PartiallyOwns: { color: '#a78bfa', highlight: '#7c3aed', width: 2.5 },
+    partially_owns: { color: '#a78bfa', highlight: '#7c3aed', width: 2.5 },
+    PARTIALLY_OWNS: { color: '#a78bfa', highlight: '#7c3aed', width: 2.5 },
+    
+    // 10. Applaud - Lime Green
+    Applaud: { color: '#84cc16', highlight: '#65a30d', width: 2.5 },
+    applaud: { color: '#84cc16', highlight: '#65a30d', width: 2.5 },
+    APPLAUD: { color: '#84cc16', highlight: '#65a30d', width: 2.5 },
+    
+    // 11. CertificateIssued - Sky Blue
+    CertificateIssued: { color: '#0ea5e9', highlight: '#0284c7', width: 2.5 },
+    certificate_issued: { color: '#0ea5e9', highlight: '#0284c7', width: 2.5 },
+    CERTIFICATE_ISSUED: { color: '#0ea5e9', highlight: '#0284c7', width: 2.5 },
+    
+    // 12. Summons - Amber
+    Summons: { color: '#f59e0b', highlight: '#d97706', width: 2.5 },
+    summons: { color: '#f59e0b', highlight: '#d97706', width: 2.5 },
+    SUMMONS: { color: '#f59e0b', highlight: '#d97706', width: 2.5 },
+    
+    // 13. Convicted - Dark Red
+    Convicted: { color: '#dc2626', highlight: '#b91c1c', width: 2.5 },
+    convicted: { color: '#dc2626', highlight: '#b91c1c', width: 2.5 },
+    CONVICTED: { color: '#dc2626', highlight: '#b91c1c', width: 2.5 },
+    
+    // Additional common relationships
+    RELATED: { color: '#6b7280', highlight: '#4b5563', width: 1.5 },
+    CONNECTED: { color: '#64748b', highlight: '#475569', width: 1.5 },
+    OWNS: { color: '#3b82f6', highlight: '#2563eb', width: 2 },
+    WORKS_FOR: { color: '#06b6d4', highlight: '#0891b2', width: 1.5 },
+    LOCATED_IN: { color: '#8b5cf6', highlight: '#7c3aed', width: 1.5 },
+    
+    // Default
+    default: { color: '#94a3b8', highlight: '#64748b', width: 1.5 }
+  };
+
+  // Get relationship style with proper colors
+  const getRelationStyle = (relType) => {
+    // Look up the relationship type in our color mapping
+    const style = relationshipColors[relType] || relationshipColors.default;
+    return {
+      color: style.color,
+      highlight: style.highlight,
+      width: style.width
+    };
+  };
+
   // Relationship polarity for layout separation
   const positiveRelations = new Set(['Aid', 'Applaud', 'Invest', 'SustainableFishing', 'CertificateIssued', 'Conference']);
   const negativeRelations = new Set(['OverFishing', 'Convicted', 'Criticize', 'Summons']);
@@ -99,17 +188,30 @@ const NetworkView = () => {
       }
     },
     edges: {
-      width: 0.7,
+      width: 2,
       color: {
         color: '#94a3b8',
         highlight: '#64748b',
         hover: '#94a3b8',
-        opacity: 0.7
+        opacity: 0.8
       },
       arrows: {
-        to: { enabled: true, scaleFactor: 0.8 }
+        to: { enabled: true, scaleFactor: 1.0, type: 'arrow' }
       },
-      smooth: false
+      font: {
+        size: 12,
+        color: '#374151',
+        strokeWidth: 2,
+        strokeColor: '#ffffff',
+        align: 'middle'
+      },
+      smooth: {
+        enabled: true,
+        type: 'continuous',
+        roundness: 0.2
+      },
+      labelHighlightBold: true,
+      selectionWidth: 3
     },
     layout: { improvedLayout: true, randomSeed: 7 },
     physics: {
@@ -159,19 +261,25 @@ const NetworkView = () => {
       console.log('Network initialized successfully');
       // Register selection listeners for details panel
       network.on('click', params => {
+        console.log('🖱️ Network click:', params);
         if (!params) return;
         const nodeId = params.nodes?.[0];
         const edgeId = params.edges?.[0];
         const pointer = params.pointer?.DOM || { x: 0, y: 0 };
+        
         if (nodeId && nodesRef.current) {
           const node = nodesRef.current.get(nodeId);
+          console.log('🔵 Node selected:', nodeId, node);
           setSelectedDetails({ type: 'node', data: node });
           setOverlayInfo({ type: 'node', data: node, x: pointer.x, y: pointer.y });
         } else if (edgeId && edgesRef.current) {
           const edge = edgesRef.current.get(edgeId);
-          setSelectedDetails({ type: 'edge', data: edge });
+          console.log('🔗 Edge selected:', edgeId, edge);
+          // Only show overlay info for edges, don't set selectedDetails for bottom panel
           setOverlayInfo({ type: 'edge', data: edge, x: pointer.x, y: pointer.y });
+          setSelectedDetails(null); // Clear bottom panel
         } else {
+          console.log('❌ No selection - clearing details');
           setSelectedDetails(null);
           setOverlayInfo(null);
         }
@@ -329,7 +437,7 @@ const NetworkView = () => {
       return;
     }
 
-    const { nodes, edges } = processResults(graphData);
+    const { nodes, edges } = processResults(graphData, selectedRelationships);
     console.log(`Processed: ${nodes.length} nodes, ${edges.length} edges`);
 
     if (nodes.length > 0 || edges.length > 0) {
@@ -369,16 +477,70 @@ const NetworkView = () => {
           + `</div>`;
         return { ...n, title };
       }));
-      // Rich tooltip content for edges
+      // Rich tooltip content for edges with all backend information
       edgesRef.current.add(edges.map(e => {
         const { label, ...rest } = e;
         const meta = e.meta || {};
-        const title = `<div style="padding:8px 10px">`
-          + `<div style="font-weight:700;margin-bottom:4px">${e.type}</div>`
-          + `<div>From: <code>${String(e.from)}</code></div>`
-          + `<div>To: <code>${String(e.to)}</code></div>`
-          + (Object.keys(meta).length ? `<div style="margin-top:4px;font-size:12px;color:#6b7280">Props: ${Object.keys(meta).slice(0,6).map(k=>`${k}=${String(meta[k])}`).join(', ')}</div>` : '')
-          + `</div>`;
+        
+        // Create comprehensive tooltip with all backend data
+        let title = `<div style="padding:10px 12px;max-width:500px">`;
+        title += `<div style="font-weight:700;margin-bottom:6px;color:#94a3b8;font-size:14px">${e.type}</div>`;
+        
+        // Show all properties from backend
+        if (Object.keys(meta).length > 0) {
+          title += `<div style="margin-bottom:8px;font-size:13px;color:#e5e7eb">All Backend Data:</div>`;
+          
+          // Separate different types of data
+          const regularProps = {};
+          const rawProps = {};
+          const systemProps = {};
+          
+          Object.entries(meta).forEach(([key, value]) => {
+            if (key.startsWith('_')) {
+              systemProps[key] = value;
+            } else if (key.startsWith('raw_')) {
+              rawProps[key] = value;
+            } else {
+              regularProps[key] = value;
+            }
+          });
+          
+          // Show regular properties first
+          Object.entries(regularProps).forEach(([key, value]) => {
+            if (value !== null && value !== undefined && value !== '') {
+              title += `<div style="margin-bottom:2px;font-size:11px">`;
+              title += `<span style="color:#10b981;font-weight:600">${key}:</span> `;
+              title += `<span style="color:#e5e7eb">${String(value)}</span>`;
+              title += `</div>`;
+            }
+          });
+          
+          // Show raw properties
+          Object.entries(rawProps).forEach(([key, value]) => {
+            if (value !== null && value !== undefined && value !== '' && typeof value !== 'object') {
+              title += `<div style="margin-bottom:2px;font-size:11px">`;
+              title += `<span style="color:#f59e0b;font-weight:500">${key}:</span> `;
+              title += `<span style="color:#d1d5db">${String(value)}</span>`;
+              title += `</div>`;
+            }
+          });
+          
+          // Show system properties
+          Object.entries(systemProps).forEach(([key, value]) => {
+            if (value !== null && value !== undefined && value !== '' && typeof value !== 'object') {
+              title += `<div style="margin-bottom:2px;font-size:10px">`;
+              title += `<span style="color:#6b7280">${key}:</span> `;
+              title += `<span style="color:#9ca3af">${String(value)}</span>`;
+              title += `</div>`;
+            }
+          });
+        }
+        
+        title += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid #374151;font-size:11px;color:#9ca3af">`;
+        title += `From: <code style="color:#93c5fd">${String(e.from)}</code><br>`;
+        title += `To: <code style="color:#93c5fd">${String(e.to)}</code>`;
+        title += `</div></div>`;
+        
         return { ...rest, title };
       }));
       console.log('Data added to vis-network');
@@ -401,7 +563,7 @@ const NetworkView = () => {
     }
 
     setStats({ nodeCount: nodesRef.current.length || nodes.length, edgeCount: edgesRef.current.length || edges.length });
-  }, [graphData]);
+  }, [graphData, selectedRelationships]);
 
   // Helpers: parsing Neo4j node/relationship objects or stringified identities
   const parseNodeLike = (nodeLike, fallbackId) => {
@@ -447,19 +609,44 @@ const NetworkView = () => {
   };
 
   const parseRelationshipLike = (relLike, fallbackId) => {
-    // Returns { identity, type, properties }
-    if (!relLike) return { identity: fallbackId, type: 'RELATES', properties: {} };
+    // Returns { identity, type, properties, rawData }
+    if (!relLike) return { identity: fallbackId, type: 'RELATES', properties: {}, rawData: {} };
+    
+    // Only log first few for debugging
+    if (Math.random() < 0.01) console.log('🔍 parseRelationshipLike input:', JSON.stringify(relLike, null, 2));
+    
     const identityValue = relLike.identity;
     const typeValue = relLike.type;
     const propsValue = relLike.properties;
     const identity = typeof identityValue === 'object' && identityValue?.toNumber ? identityValue.toNumber() : (identityValue ?? fallbackId);
     const type = typeValue || 'RELATES';
     const properties = propsValue || {};
-    return { identity, type, properties };
+    
+    // Capture ALL fields from the raw relationship object
+    const rawData = {};
+    Object.keys(relLike).forEach(key => {
+      if (!['identity', 'type', 'properties'].includes(key)) {
+        rawData[key] = relLike[key];
+      }
+    });
+    
+    // Also capture any nested data
+    if (typeof relLike === 'object') {
+      Object.entries(relLike).forEach(([key, value]) => {
+        if (value !== null && value !== undefined && typeof value !== 'function') {
+          rawData[`raw_${key}`] = value;
+        }
+      });
+    }
+    
+    // Only log first few for debugging  
+    if (Math.random() < 0.01) console.log('🔍 parseRelationshipLike output:', { identity, type, properties, rawData });
+    
+    return { identity, type, properties, rawData };
   };
 
   // Process Neo4j results into vis-network format
-  const processResults = (results) => {
+  const processResults = (results, selectedRelationships = []) => {
     if (!results?.records?.length) return { nodes: [], edges: [] };
 
     const nodes = [];
@@ -472,6 +659,17 @@ const NetworkView = () => {
 
     results.records.forEach((record, index) => {
       try {
+        // Debug the record structure for first few records
+        if (index < 3) {
+          console.log(`=== RECORD DEBUG ${index} ===`);
+          console.log('Full record:', record);
+          console.log('Record keys:', Object.keys(record));
+          console.log('record.start:', record.start);
+          console.log('record.r:', record.r);
+          console.log('record.end:', record.end);
+          console.log('========================');
+        }
+        
         // Expecting shape: { start, r, end }
         const startNode = record.start;
         const endNode = record.end;
@@ -532,23 +730,95 @@ const NetworkView = () => {
           nodeMap.set(endId, true);
         }
 
-        // Process relationship - ONLY show relationship type
+        // Process relationship with colors and values
         const relData = parseRelationshipLike(relationship, `rel_${index}`);
-        const relId = relData.identity;
+        
+        // WORKAROUND: If relationship type is missing, infer from selected relationships
+        let actualRelType = relData.type;
+        if (actualRelType === 'RELATES' && selectedRelationships.length > 0) {
+          // For UNION queries with multiple relationship types, we need to determine which part of the result this record belongs to
+          // Since backend returns empty relationships, we'll cycle through the selected types based on record position
+          const typeIndex = Math.floor(index / Math.ceil(results.records.length / selectedRelationships.length));
+          actualRelType = selectedRelationships[Math.min(typeIndex, selectedRelationships.length - 1)];
+          
+          // Only log warning once per 100 records to avoid spam
+          if (index % 100 === 0) {
+            console.log(`⚠️ Inferring relationship type '${actualRelType}' from selection (backend returned empty relationship) - Record ${index}, Type Index: ${typeIndex}`);
+          }
+        }
+        
+        // Use a unique edge ID that includes the relationship type to avoid deduplication issues
+        const relId = `${relData.identity}_${actualRelType}_${startId}_${endId}`;
         
         if (!edgeMap.has(relId)) {
+          const relType = actualRelType;
+          const relConfig = getRelationStyle(relType);
+          
+          // Enhanced debug logging for relationship colors and meta data (only first 3 records)
+          if (index < 3) {
+            console.log(`=== EDGE DEBUG ${index} ===`);
+            console.log(`- Raw relationship:`, JSON.stringify(relationship, null, 2));
+            console.log(`- Parsed relType: "${relType}"`);
+            console.log(`- Actual relType: "${actualRelType}"`);
+            console.log(`- Properties:`, JSON.stringify(relData.properties, null, 2));
+            console.log(`- Raw Data:`, JSON.stringify(relData.rawData, null, 2));
+            console.log(`- Edge ID: ${relId}`);
+            console.log(`- Color: ${relConfig.color}`);
+            console.log(`==================`);
+          }
+          
+          // Extract value from properties if available
+          const value = relData.properties?.value || relData.properties?.weight || relData.properties?.strength || '';
+          const displayLabel = value ? `${relType}\n${value}` : relType;
+          
+          // Combine all available data for the edge
+          const allMetadata = {
+            ...relData.properties,
+            ...relData.rawData,
+            _originalRelationship: relationship,
+            _relId: relData.identity,
+            _relType: relType,
+            _inferredFromSelection: actualRelType !== relData.type,
+            _selectedRelationships: selectedRelationships,
+            _backendIssue: 'Relationship data empty from backend API',
+            _queryUsed: `MATCH (start)-[r:${actualRelType}]->(end) RETURN start, r, end`,
+            _recordIndex: index,
+            _startNodeId: startId,
+            _endNodeId: endId
+          };
+          
           edges.push({
             id: relId,
             from: startId,
             to: endId,
-            label: relData.type,
-            type: relData.type,
-            meta: relData.properties,
+            label: displayLabel,
+            type: relType,
+            meta: allMetadata,
+            color: {
+              color: relConfig.color,
+              highlight: relConfig.highlight,
+              hover: relConfig.color,
+              opacity: 0.8
+            },
+            width: relConfig.width,
             font: {
-              size: 12,
-              color: '#ffffff',
-              strokeWidth: 3,
-              strokeColor: '#374151'
+              size: 11,
+              color: '#374151',
+              strokeWidth: 2,
+              strokeColor: '#ffffff',
+              align: 'middle'
+            },
+            arrows: {
+              to: {
+                enabled: true,
+                scaleFactor: 1.0,
+                type: 'arrow'
+              }
+            },
+            smooth: {
+              enabled: true,
+              type: 'continuous',
+              roundness: 0.2
             }
           });
           edgeMap.set(relId, true);
@@ -560,6 +830,14 @@ const NetworkView = () => {
 
     console.log(`=== PROCESSING COMPLETE ===`);
     console.log(`Final result: ${nodes.length} nodes, ${edges.length} edges`);
+    
+    // Log all unique relationship types found
+    const uniqueRelTypes = [...new Set(edges.map(e => e.type))];
+    console.log('Unique relationship types found:', uniqueRelTypes);
+    uniqueRelTypes.forEach(relType => {
+      const config = getRelationStyle(relType);
+      console.log(`- "${relType}" -> ${config.color}`);
+    });
     console.log('===========================');
 
     return { nodes, edges };
@@ -712,12 +990,22 @@ const NetworkView = () => {
         {/* Legend */}
         {showLegend && (
           <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '12px' }}>
-            <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '8px' }}>Legend</div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '8px' }}>Node Types</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
               {Object.keys(colorPalette).filter(k => k !== 'default').map(key => (
-                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '8px', border: '1px solid #e5e7eb', padding: '6px 8px', borderRadius: '8px', background: '#fff' }}>
-                  <div style={{ width: 14, height: 14, borderRadius: '50%', background: colorPalette[key].background, border: `2px solid ${colorPalette[key].border}` }} />
-                  <div style={{ fontSize: '0.8rem' }}>{key}</div>
+                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid #e5e7eb', padding: '4px 6px', borderRadius: '6px', background: '#fff' }}>
+                  <div style={{ width: 12, height: 12, borderRadius: '50%', background: colorPalette[key].background, border: `2px solid ${colorPalette[key].border}` }} />
+                  <div style={{ fontSize: '0.75rem' }}>{key}</div>
+                </div>
+              ))}
+            </div>
+            
+            <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '8px' }}>Relationship Types</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              {['Invest', 'Aid', 'Transaction', 'SustainableFishing', 'Fishing', 'Conference', 'OverFishing', 'Criticize', 'PartiallyOwns', 'Applaud', 'CertificateIssued', 'Summons', 'Convicted'].map(key => (
+                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid #e5e7eb', padding: '4px 6px', borderRadius: '6px', background: '#fff' }}>
+                  <div style={{ width: 16, height: 3, borderRadius: '2px', background: relationshipColors[key]?.color || relationshipColors.default.color }} />
+                  <div style={{ fontSize: '0.75rem' }}>{key}</div>
                 </div>
               ))}
             </div>
@@ -777,9 +1065,12 @@ const NetworkView = () => {
                 )}
                 {overlayInfo.type === 'edge' && (
                   <div>
-                    <div style={{ fontWeight: 700, marginBottom: 6, color: '#f59e0b' }}>{overlayInfo.data.type || overlayInfo.data.label}</div>
-                    <div style={{ marginBottom: 4 }}>
-                      <div style={{ fontSize: '0.9rem' }}>
+                    <div style={{ fontWeight: 700, marginBottom: 8, color: overlayInfo.data.color?.color || '#f59e0b', fontSize: '1rem' }}>
+                      {overlayInfo.data.type || overlayInfo.data.label}
+                    </div>
+                    
+                    <div style={{ fontSize: '0.85rem', lineHeight: '1.4' }}>
+                      <div style={{ marginBottom: 4 }}>
                         <span style={{ color: '#9ca3af' }}>From:</span> <span style={{ color: '#93c5fd', fontWeight: 500 }}>
                           {(() => {
                             const fromNode = nodesRef.current?.get(overlayInfo.data.from);
@@ -787,7 +1078,8 @@ const NetworkView = () => {
                           })()}
                         </span>
                       </div>
-                      <div style={{ fontSize: '0.9rem' }}>
+                      
+                      <div style={{ marginBottom: 4 }}>
                         <span style={{ color: '#9ca3af' }}>To:</span> <span style={{ color: '#93c5fd', fontWeight: 500 }}>
                           {(() => {
                             const toNode = nodesRef.current?.get(overlayInfo.data.to);
@@ -795,14 +1087,36 @@ const NetworkView = () => {
                           })()}
                         </span>
                       </div>
-                    </div>
-                    {overlayInfo.data.meta && Object.keys(overlayInfo.data.meta).length > 0 && (
-                      <div style={{ marginTop: 8, fontSize: '0.85rem', color: '#9ca3af' }}>
-                        <div>Properties: {Object.keys(overlayInfo.data.meta).slice(0, 3).map(key => 
-                          `${key}: ${String(overlayInfo.data.meta[key])}`
-                        ).join(', ')}</div>
+                      
+                      <div style={{ marginBottom: 4 }}>
+                        <span style={{ color: '#9ca3af' }}>Color:</span> 
+                        <span style={{ color: '#e5e7eb', fontFamily: 'monospace', marginLeft: 6 }}>
+                          {overlayInfo.data.color?.color || '#94a3b8'}
+                        </span>
+                        <div style={{ 
+                          display: 'inline-block', 
+                          width: '10px', 
+                          height: '10px', 
+                          backgroundColor: overlayInfo.data.color?.color || '#94a3b8', 
+                          borderRadius: '2px',
+                          marginLeft: 6,
+                          verticalAlign: 'middle'
+                        }}></div>
                       </div>
-                    )}
+                      
+                      <div style={{ marginBottom: 4 }}>
+                        <span style={{ color: '#9ca3af' }}>Record:</span> 
+                        <span style={{ color: '#e5e7eb' }}>
+                          {overlayInfo.data.meta?._recordIndex || 'N/A'} of {overlayInfo.data.meta?._selectedRelationships ? overlayInfo.data.meta._selectedRelationships.join(', ') : 'N/A'}
+                        </span>
+                      </div>
+                      
+                      {overlayInfo.data.meta?._inferredFromSelection && (
+                        <div style={{ fontSize: '0.75rem', color: '#f59e0b', fontStyle: 'italic' }}>
+                          (Type inferred from selection)
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
@@ -848,12 +1162,43 @@ const NetworkView = () => {
             </div>
           )}
           {selectedDetails && selectedDetails.type === 'edge' && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                <div style={{ width: 12, height: 3, background: '#f59e0b', borderRadius: '2px' }} />
-                <div style={{ fontWeight: 600, fontSize: '1.1rem', color: '#f59e0b' }}>{selectedDetails.data.type || selectedDetails.data.label}</div>
+                <div style={{ width: 12, height: 3, background: selectedDetails.data.color?.color || '#94a3b8', borderRadius: '2px' }} />
+                <div style={{ fontWeight: 600, fontSize: '1.1rem', color: selectedDetails.data.color?.color || '#374151' }}>{selectedDetails.data.type || selectedDetails.data.label}</div>
                 <div style={{ fontSize: '0.9rem', color: '#6b7280' }}>Relationship</div>
               </div>
+              
+              {/* Simple edge information - just 4-5 key details */}
+              {selectedDetails.data.meta && (
+                <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '6px', padding: '12px' }}>
+                  <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '8px', color: '#374151' }}>
+                    Edge Information
+                  </div>
+                  
+                  <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '6px 12px', fontSize: '0.85rem' }}>
+                    <div style={{ color: '#6b7280', fontWeight: 500 }}>Type:</div>
+                    <div style={{ color: '#374151', fontWeight: 600 }}>{selectedDetails.data.type}</div>
+                    
+                    <div style={{ color: '#6b7280', fontWeight: 500 }}>From:</div>
+                    <div style={{ color: '#374151' }}>{selectedDetails.data.from}</div>
+                    
+                    <div style={{ color: '#6b7280', fontWeight: 500 }}>To:</div>
+                    <div style={{ color: '#374151' }}>{selectedDetails.data.to}</div>
+                    
+                    <div style={{ color: '#6b7280', fontWeight: 500 }}>Color:</div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <div style={{ width: '12px', height: '12px', backgroundColor: selectedDetails.data.color?.color || '#94a3b8', borderRadius: '2px' }}></div>
+                      <span style={{ color: '#374151', fontFamily: 'monospace' }}>{selectedDetails.data.color?.color || '#94a3b8'}</span>
+                    </div>
+                    
+                    <div style={{ color: '#6b7280', fontWeight: 500 }}>Record:</div>
+                    <div style={{ color: '#374151' }}>{selectedDetails.data.meta._recordIndex || 'N/A'} of {selectedDetails.data.meta._selectedRelationships ? selectedDetails.data.meta._selectedRelationships.join(', ') : 'N/A'}</div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Show edge connection details */}
               <div style={{ display: 'flex', gap: '24px', fontSize: '0.9rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <div style={{ color: '#6b7280', fontSize: '0.8rem' }}>FROM</div>
@@ -880,6 +1225,40 @@ const NetworkView = () => {
                     ID: {String(selectedDetails.data.to)}
                   </div>
                 </div>
+              </div>
+              
+              {/* Debug info - show raw edge data */}
+              <div style={{ background: '#f3f4f6', border: '1px solid #d1d5db', borderRadius: '6px', padding: '8px' }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 600, marginBottom: '4px', color: '#6b7280' }}>Debug Info</div>
+                <div style={{ fontSize: '0.7rem', color: '#9ca3af', fontFamily: 'monospace' }}>
+                  Edge ID: {selectedDetails.data.id}<br/>
+                  Type: {selectedDetails.data.type}<br/>
+                  Color: {selectedDetails.data.color?.color || 'default'}<br/>
+                  Meta keys: {selectedDetails.data.meta ? Object.keys(selectedDetails.data.meta).join(', ') : 'none'}<br/>
+                  Total properties: {selectedDetails.data.meta ? Object.keys(selectedDetails.data.meta).length : 0}
+                </div>
+                
+                {/* Show raw metadata in expandable format */}
+                {selectedDetails.data.meta && Object.keys(selectedDetails.data.meta).length > 0 && (
+                  <details style={{ marginTop: '8px' }}>
+                    <summary style={{ fontSize: '0.75rem', color: '#6b7280', cursor: 'pointer' }}>
+                      Raw Metadata ({Object.keys(selectedDetails.data.meta).length} properties)
+                    </summary>
+                    <pre style={{ 
+                      fontSize: '0.65rem', 
+                      color: '#374151', 
+                      background: '#ffffff', 
+                      padding: '8px', 
+                      borderRadius: '4px', 
+                      marginTop: '4px',
+                      maxHeight: '200px',
+                      overflow: 'auto',
+                      border: '1px solid #e5e7eb'
+                    }}>
+                      {JSON.stringify(selectedDetails.data.meta, null, 2)}
+                    </pre>
+                  </details>
+                )}
               </div>
             </div>
           )}
