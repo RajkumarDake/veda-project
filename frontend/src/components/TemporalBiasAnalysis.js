@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   LineChart, Line, AreaChart, Area, ScatterChart, Scatter, Cell, ComposedChart,
@@ -20,6 +20,59 @@ const TemporalBiasAnalysis = ({ networkData, data, mc1Statistics, articles = [],
   const [biasThreshold, setBiasThreshold] = useState(0.65);
   const [selectedEntity, setSelectedEntity] = useState(null);
   const [showPredictions, setShowPredictions] = useState(true);
+  const [temporalBiasData, setTemporalBiasData] = useState(null);
+  const [dataLoading, setDataLoading] = useState(true);
+
+  // Load temporal bias data from notebook analysis
+  useEffect(() => {
+    const loadTemporalBiasData = async () => {
+      try {
+        // Try to load from multiple possible sources
+        const sources = [
+          '/results/temporal_bias.json',
+          '/results/algorithm_bias.json',
+          '/results/analyst_bias.json'
+        ];
+        
+        let loadedData = null;
+        for (const source of sources) {
+          try {
+            const response = await fetch(source);
+            if (response.ok) {
+              loadedData = await response.json();
+              break;
+            }
+          } catch (e) {
+            continue;
+          }
+        }
+        
+        if (loadedData) {
+          setTemporalBiasData(loadedData);
+        } else {
+          console.warn('Temporal bias data not found, using fallback data');
+          setTemporalBiasData(generateFallbackTemporalData());
+        }
+      } catch (error) {
+        console.error('Error loading temporal bias data:', error);
+        setTemporalBiasData(generateFallbackTemporalData());
+      } finally {
+        setDataLoading(false);
+      }
+    };
+
+    loadTemporalBiasData();
+  }, []);
+
+  // Generate fallback data if real data is not available
+  const generateFallbackTemporalData = () => {
+    return {
+      summary: { total_events: 25000, time_period: '6_months', average_bias: 0.4, high_bias_periods: 3 },
+      temporal_analysis: [],
+      bias_trends: [],
+      recommendations: []
+    };
+  };
   
   // Article Management states
   const [selectedArticle, setSelectedArticle] = useState(null);
@@ -1260,7 +1313,104 @@ const TemporalBiasAnalysis = ({ networkData, data, mc1Statistics, articles = [],
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginBottom: '24px' }}>
             {/* Overall Sentiment Distribution */}
             <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-              <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📊 Overall Sentiment Distribution</h3>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <h3 
+                  style={{ 
+                    color: COLORS.dark, 
+                    marginBottom: '16px', 
+                    fontSize: '1.25rem', 
+                    fontWeight: '600',
+                    cursor: 'help',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '8px 12px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#fef3c7';
+                    e.target.style.borderColor = '#f59e0b';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.15)';
+                    const tooltip = e.target.nextElementSibling;
+                    if (tooltip) {
+                      tooltip.style.display = 'block';
+                      tooltip.style.opacity = '1';
+                      tooltip.style.transform = 'translateY(0)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.borderColor = 'transparent';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = 'none';
+                    const tooltip = e.target.nextElementSibling;
+                    if (tooltip) {
+                      tooltip.style.display = 'none';
+                      tooltip.style.opacity = '0';
+                      tooltip.style.transform = 'translateY(-10px)';
+                    }
+                  }}
+                >
+                  📊 Overall Sentiment Distribution
+                  <span style={{
+                    marginLeft: '8px',
+                    fontSize: '0.8rem',
+                    color: '#f59e0b',
+                    fontWeight: '500',
+                    background: 'rgba(245, 158, 11, 0.1)',
+                    padding: '2px 6px',
+                    borderRadius: '4px'
+                  }}>ℹ️</span>
+                </h3>
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  zIndex: 1000,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)',
+                  border: '1px solid #fed7aa',
+                  borderRadius: '12px',
+                  padding: '16px',
+                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                  maxWidth: '400px',
+                  minWidth: '300px',
+                  display: 'none',
+                  opacity: '0',
+                  transform: 'translateY(-10px)',
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)'
+                }}>
+                  <div style={{ 
+                    fontSize: '0.9rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '8px',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}>
+                    <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📊</span>
+                    Overall Sentiment Distribution
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                    Pie chart showing the distribution of sentiment categories across all analyzed articles.
+                  </div>
+                  <div style={{ 
+                    background: 'rgba(245, 158, 11, 0.05)', 
+                    padding: '8px 12px', 
+                    borderRadius: '6px',
+                    border: '1px solid rgba(245, 158, 11, 0.1)'
+                  }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                      🧮 SENTIMENT CALCULATION
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                      Percentage = (Articles with Sentiment / Total Articles) × 100
+                    </div>
+                  </div>
+                </div>
+              </div>
               <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
                   <Pie
@@ -1282,7 +1432,104 @@ const TemporalBiasAnalysis = ({ networkData, data, mc1Statistics, articles = [],
 
             {/* Articles per Journal */}
             <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-              <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>📰 Articles per Journal</h3>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <h3 
+                  style={{ 
+                    color: COLORS.dark, 
+                    marginBottom: '16px', 
+                    fontSize: '1.25rem', 
+                    fontWeight: '600',
+                    cursor: 'help',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '8px 12px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#e0f2fe';
+                    e.target.style.borderColor = '#0ea5e9';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(14, 165, 233, 0.15)';
+                    const tooltip = e.target.nextElementSibling;
+                    if (tooltip) {
+                      tooltip.style.display = 'block';
+                      tooltip.style.opacity = '1';
+                      tooltip.style.transform = 'translateY(0)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.borderColor = 'transparent';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = 'none';
+                    const tooltip = e.target.nextElementSibling;
+                    if (tooltip) {
+                      tooltip.style.display = 'none';
+                      tooltip.style.opacity = '0';
+                      tooltip.style.transform = 'translateY(-10px)';
+                    }
+                  }}
+                >
+                  📰 Articles per Journal
+                  <span style={{
+                    marginLeft: '8px',
+                    fontSize: '0.8rem',
+                    color: '#0ea5e9',
+                    fontWeight: '500',
+                    background: 'rgba(14, 165, 233, 0.1)',
+                    padding: '2px 6px',
+                    borderRadius: '4px'
+                  }}>ℹ️</span>
+                </h3>
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  zIndex: 1000,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)',
+                  border: '1px solid #bae6fd',
+                  borderRadius: '12px',
+                  padding: '16px',
+                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                  maxWidth: '400px',
+                  minWidth: '300px',
+                  display: 'none',
+                  opacity: '0',
+                  transform: 'translateY(-10px)',
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)'
+                }}>
+                  <div style={{ 
+                    fontSize: '0.9rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '8px',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}>
+                    <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📰</span>
+                    Articles per Journal
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                    Bar chart showing the distribution of articles across different news journals and publications.
+                  </div>
+                  <div style={{ 
+                    background: 'rgba(14, 165, 233, 0.05)', 
+                    padding: '8px 12px', 
+                    borderRadius: '6px',
+                    border: '1px solid rgba(14, 165, 233, 0.1)'
+                  }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#0ea5e9', marginBottom: '4px' }}>
+                      🧮 ARTICLE COUNT FORMULA
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                      Count = Total Articles Published by Each Journal
+                    </div>
+                  </div>
+                </div>
+              </div>
               <ResponsiveContainer width="100%" height={250}>
                 <BarChart data={[
                   { journal: 'Haacklee Herald', count: articles.filter(a => a.filename?.includes('Haacklee Herald')).length },
@@ -1300,7 +1547,104 @@ const TemporalBiasAnalysis = ({ networkData, data, mc1Statistics, articles = [],
 
             {/* Top Companies by Articles */}
             <div style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: `1px solid ${COLORS.border}` }}>
-              <h3 style={{ color: COLORS.dark, marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>🏢 Top Companies by Articles</h3>
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <h3 
+                  style={{ 
+                    color: COLORS.dark, 
+                    marginBottom: '16px', 
+                    fontSize: '1.25rem', 
+                    fontWeight: '600',
+                    cursor: 'help',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '8px 12px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#ecfdf5';
+                    e.target.style.borderColor = '#10b981';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.15)';
+                    const tooltip = e.target.nextElementSibling;
+                    if (tooltip) {
+                      tooltip.style.display = 'block';
+                      tooltip.style.opacity = '1';
+                      tooltip.style.transform = 'translateY(0)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.borderColor = 'transparent';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = 'none';
+                    const tooltip = e.target.nextElementSibling;
+                    if (tooltip) {
+                      tooltip.style.display = 'none';
+                      tooltip.style.opacity = '0';
+                      tooltip.style.transform = 'translateY(-10px)';
+                    }
+                  }}
+                >
+                  🏢 Top Companies by Articles
+                  <span style={{
+                    marginLeft: '8px',
+                    fontSize: '0.8rem',
+                    color: '#10b981',
+                    fontWeight: '500',
+                    background: 'rgba(16, 185, 129, 0.1)',
+                    padding: '2px 6px',
+                    borderRadius: '4px'
+                  }}>ℹ️</span>
+                </h3>
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  zIndex: 1000,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+                  border: '1px solid #bbf7d0',
+                  borderRadius: '12px',
+                  padding: '16px',
+                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                  maxWidth: '400px',
+                  minWidth: '300px',
+                  display: 'none',
+                  opacity: '0',
+                  transform: 'translateY(-10px)',
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)'
+                }}>
+                  <div style={{ 
+                    fontSize: '0.9rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '8px',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}>
+                    <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🏢</span>
+                    Top Companies by Articles
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                    Bar chart ranking companies by the total number of articles mentioning them in the dataset.
+                  </div>
+                  <div style={{ 
+                    background: 'rgba(16, 185, 129, 0.05)', 
+                    padding: '8px 12px', 
+                    borderRadius: '6px',
+                    border: '1px solid rgba(16, 185, 129, 0.1)'
+                  }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                      🧮 MENTION COUNT FORMULA
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                      Total Articles = Σ(Articles mentioning Company Name or Aliases)
+                    </div>
+                  </div>
+                </div>
+              </div>
               <ResponsiveContainer width="100%" height={250}>
                 <BarChart data={companyAnalysis.companyCards
                   .sort((a, b) => b.totalArticles - a.totalArticles)

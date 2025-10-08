@@ -27,7 +27,7 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
     },
     {
       title: 'Analyst Bias Detection',
-      image: CardImage4,
+      image: CardImage3,
       description: 'Detect bias patterns in analyst reports and professional content.',
       buttonText: 'Detect Bias',
       buttonClass: 'button-outline-primary',
@@ -35,11 +35,19 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
     },
     {
       title: 'Temporal Bias Analysis',
-      image: CardImage5,
+      image: CardImage4,
       description: 'Track bias trends over time and identify temporal patterns.',
       buttonText: 'View Trends',
       buttonClass: 'button-outline-primary',
       onClick: () => onNavigate('temporal-bias'),
+    },
+    {
+      title: 'Algorithm Bias',
+      image: CardImage5,
+      description: 'Analyze bias patterns by extraction algorithm across the knowledge graph.',
+      buttonText: 'View Algorithm Bias',
+      buttonClass: 'button-outline-primary',
+      onClick: () => onNavigate('algorithm-bias'),
     },
     {
       title: 'Multi-Dashboard',
@@ -51,6 +59,7 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
     },
     {
       title: 'Analytics',
+      image: CardImage3,
       description: 'Comprehensive analytics dashboard with advanced metrics and visualizations.',
       buttonText: 'View Analytics',
       buttonClass: 'button-outline-primary',
@@ -58,7 +67,7 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
     },
     {
       title: 'Network View',
-      image: CardImage3,
+      image: CardImage2,
       description: 'Interactive Force-directed Graph with local Neo4j integration.',
       buttonText: 'Explore Network',
       buttonClass: 'button-outline-primary',

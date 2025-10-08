@@ -24,8 +24,8 @@ import PixelVisualizationPage from './pages/PixelVisualizationPage';
 import UnreliableActorPage from './pages/UnreliableActorPage';
 import MultiDashboardPage from './pages/MultiDashboardPage';
 import AdvancedAnalyticsPage from './pages/AdvancedAnalyticsPage';
+import AlgorithmBiasPage from './pages/AlgorithmBiasPage';
 import SentimentAnalysisPage from './pages/SentimentAnalysisPage';
-import KnowledgeGraphPage from './pages/KnowledgeGraphPage';
 import NetworkView from './components/NetworkView';
 import './App.css';
 
@@ -225,8 +225,8 @@ function AppContent() {
       'multi-dashboard': '/multi-dashboard',
       'advanced-analytics': '/advanced-analytics',
       'sentiment-analysis': '/sentiment-analysis',
-      'knowledge-graph': '/knowledge-graph',
-      'network-view': '/network-view'
+      'network-view': '/network-view',
+      'algorithm-bias': '/algorithm-bias'
     };
     
     if (routes[view]) {
@@ -293,8 +293,8 @@ function AppContent() {
           <Route path="/multi-dashboard" element={<MultiDashboardPage networkData={data.mc1NetworkData} data={data.multiDashboardData} mc1Data={data.mc1Statistics} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
           <Route path="/advanced-analytics" element={<AdvancedAnalyticsPage data={data} loading={loading} mc1Statistics={data.mc1Statistics} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
           <Route path="/sentiment-analysis" element={<SentimentAnalysisPage data={data} loading={loading} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
-          <Route path="/knowledge-graph" element={<KnowledgeGraphPage networkData={data.mc1NetworkData} data={data} mc1Statistics={data.mc1Statistics} />} />
           <Route path="/network-view" element={<NetworkView />} />
+          <Route path="/algorithm-bias" element={<AlgorithmBiasPage mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
         </Routes>
       </div>
     </div>

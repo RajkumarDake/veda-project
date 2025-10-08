@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { 
   ResponsiveContainer, 
   BarChart, 
@@ -45,6 +45,44 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
   const [selectedJournal, setSelectedJournal] = useState('All');
   const [selectedSentiment, setSelectedSentiment] = useState('All');
   const [selectedCompany, setSelectedCompany] = useState('All');
+  const [articleBiasData, setArticleBiasData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Load article bias data from notebook analysis
+  useEffect(() => {
+    const loadArticleBiasData = async () => {
+      try {
+        const response = await fetch('/results/article_bias.json');
+        if (response.ok) {
+          const data = await response.json();
+          setArticleBiasData(data);
+        } else {
+          console.warn('Article bias data not found, using fallback data');
+          setArticleBiasData(generateFallbackArticleData());
+        }
+      } catch (error) {
+        console.error('Error loading article bias data:', error);
+        setArticleBiasData(generateFallbackArticleData());
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadArticleBiasData();
+  }, []);
+
+  // Generate fallback data if real data is not available
+  const generateFallbackArticleData = () => {
+    return {
+      summary: { total_articles: 14, total_mentions: 8000, average_bias: 0.4, high_bias_articles: 3 },
+      article_comparison: [],
+      top_articles: { most_mentioned: [], most_biased: [], most_confident: [], most_diverse: [] },
+      article_type_statistics: {},
+      risk_assessment: { high_risk: 2, medium_risk: 4, low_risk: 8 },
+      recommendations: [],
+      chart_data: {}
+    };
+  };
 
   // Define journals array at the top
   const journals = ['Haacklee Herald', 'Lomark Daily', 'The News Buoy'];
@@ -164,6 +202,17 @@ const ArticleBiasProfessional = ({ articles = [] }) => {
     });
     return journalBias;
   }, [articles]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading article bias analysis...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ 

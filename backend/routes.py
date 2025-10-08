@@ -120,8 +120,6 @@ def register_routes(app, bias_analyzer, db_manager, neo4j_manager):
             if entropy_data:
                 entropy_df = pd.DataFrame(entropy_data)
                 result = []
-                from database import BiasAnalyzer
-                bias_analyzer = BiasAnalyzer()
                 for entity in entropy_df['entity'].unique():
                     entity_data = entropy_df[entropy_df['entity'] == entity]
                     sentiments = entity_data['sentiment'].tolist()
@@ -233,6 +231,22 @@ def register_routes(app, bias_analyzer, db_manager, neo4j_manager):
             return jsonify({'connected': True, 'message': 'Neo4j connected successfully', 'stats': stats})
         except Exception as e:
             return jsonify({'connected': False, 'message': f'Neo4j connection error: {str(e)}'})
+
+    # Serve bias result JSONs to frontend
+    @app.route('/api/results/<path:filename>', methods=['GET'])
+    def get_result_file(filename):
+        try:
+            # Only allow .json from results directory
+            if not filename.endswith('.json'):
+                return jsonify({'error': 'Only .json files allowed'}), 400
+            results_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'results', filename)
+            if not os.path.exists(results_path):
+                return jsonify({'error': 'File not found'}), 404
+            with open(results_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            return jsonify(data)
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
 
     @app.route('/api/temporal-bias-analysis', methods=['GET'])
     def get_temporal_bias_analysis():
@@ -462,5 +476,30 @@ def register_routes(app, bias_analyzer, db_manager, neo4j_manager):
         except Exception as e:
             return jsonify({'error': str(e)}), 500
 
-
-
+    # Groq LLM Query Generation Endpoint
+    @app.route('/api/groq/generate-query', methods=['POST'])
+    def generate_groq_query():
+        try:
+            # Import groq_service here to avoid circular imports
+            from groq_service import groq_service
+            
+            data = request.get_json()
+            selected_nodes = data.get('selectedNodes', [])
+            selected_relationships = data.get('selectedRelationships', [])
+            user_intent = data.get('userIntent', '')
+            query_limit = data.get('queryLimit', '')
+            
+            if not selected_nodes and not selected_relationships:
+                return jsonify({'error': 'Please select at least one node or relationship type'}), 400
+            
+            # Generate query using Groq
+            result = groq_service.generate_cypher_query(selected_nodes, selected_relationships, user_intent, query_limit)
+            
+            return jsonify(result)
+            
+        except Exception as e:
+            return jsonify({
+                'success': False,
+                'error': str(e),
+                'query': 'MATCH (n)-[r]-(m) RETURN n, r, m LIMIT 10'  # Fallback query
+            }), 500

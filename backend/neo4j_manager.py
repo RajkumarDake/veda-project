@@ -274,30 +274,250 @@ class Neo4jManager:
         """Execute a custom Cypher query and return results"""
         if not self.driver:
             return {'records': [], 'summary': None}
+        
         try:
+            print(f"Executing query: {query}")
             records, summary, keys = self.driver.execute_query(query)
+            
+            print(f"Query returned {len(records)} records with keys: {keys}")
+            
             result_records = []
-            for record in records:
+            for i, record in enumerate(records):
                 record_dict = {}
                 for key in keys:
                     value = record[key]
-                    # Convert Neo4j objects to dictionaries
-                    if hasattr(value, '__dict__'):
-                        record_dict[key] = dict(value)
-                    else:
-                        record_dict[key] = value
+                    # Debug: print the type of value before serialization
+                    if i < 3:  # Only print first 3 to avoid spam
+                        print(f"Record {i}, key '{key}': type={type(value)}, class={value.__class__.__name__ if hasattr(value, '__class__') else 'unknown'}")
+                        if hasattr(value, '__dict__'):
+                            print(f"  Object attributes: {[attr for attr in dir(value) if not attr.startswith('_')][:10]}")
+                    
+                    # Convert Neo4j objects to serializable format
+                    serialized = self._serialize_neo4j_object(value)
+                    
+                    if i < 3:
+                        print(f"  Serialized to: {type(serialized)}, keys={serialized.keys() if isinstance(serialized, dict) else 'not a dict'}")
+                    
+                    record_dict[key] = serialized
                 result_records.append(record_dict)
+            
+            print(f"Successfully serialized {len(result_records)} records")
             
             return {
                 'records': result_records,
                 'summary': {
                     'query_type': summary.query_type if hasattr(summary, 'query_type') else None,
-                    'counters': dict(summary.counters) if hasattr(summary, 'counters') else {}
+                    'counters': self._extract_counters(summary.counters) if hasattr(summary, 'counters') else {}
                 }
             }
         except Exception as e:
             print(f"Error executing query: {e}")
+            import traceback
+            traceback.print_exc()
             return {'records': [], 'error': str(e)}
+
+    def _serialize_neo4j_object(self, obj):
+        """Convert Neo4j objects to serializable format"""
+        try:
+            def make_json_safe(value):
+                # Recursively convert unknown/complex types to JSON-safe structures
+                if value is None or isinstance(value, (str, int, float, bool)):
+                    return value
+                if isinstance(value, list):
+                    return [make_json_safe(v) for v in value]
+                if isinstance(value, dict):
+                    return {k: make_json_safe(v) for k, v in value.items()}
+                # Neo4j specific numeric wrappers
+                if hasattr(value, 'toNumber') and callable(getattr(value, 'toNumber')):
+                    try:
+                        return value.toNumber()
+                    except Exception:
+                        return str(value)
+                # Fallback to string for unknown types (e.g., abc.OverFishing)
+                return str(value)
+
+            # Handle None
+            if obj is None:
+                return None
+            
+            # Handle basic types
+            if isinstance(obj, (str, int, float, bool)):
+                return obj
+            
+            # Handle lists first to avoid recursion issues
+            if isinstance(obj, list):
+                return [self._serialize_neo4j_object(item) for item in obj]
+            
+            # Check if it's a Neo4j Path object by checking for common Path attributes
+            # Neo4j Path objects have 'nodes' and 'relationships' attributes
+            if hasattr(obj, '__class__') and 'Path' in obj.__class__.__name__:
+                print(f"Serializing Neo4j Path object: {obj.__class__.__name__}")
+                segments = []
+                
+                # Build segments from nodes and relationships
+                if hasattr(obj, 'nodes') and hasattr(obj, 'relationships'):
+                    nodes = list(obj.nodes)
+                    relationships = list(obj.relationships)
+                    
+                    # Create segments from alternating nodes and relationships
+                    for i in range(len(relationships)):
+                        segments.append({
+                            'start': self._serialize_node(nodes[i]),
+                            'end': self._serialize_node(nodes[i + 1]),
+                            'relationship': self._serialize_relationship(relationships[i])
+                        })
+                    
+                    return {
+                        'segments': segments,
+                        'nodes': [self._serialize_node(node) for node in nodes],
+                        'relationships': [self._serialize_relationship(rel) for rel in relationships]
+                    }
+            
+            # Handle Neo4j Node objects
+            if hasattr(obj, '__class__') and 'Node' in obj.__class__.__name__:
+                return self._serialize_node(obj)
+            
+            # Handle Neo4j Relationship objects  
+            if hasattr(obj, '__class__') and 'Relationship' in obj.__class__.__name__:
+                return self._serialize_relationship(obj)
+            
+            # Handle dictionaries
+            if isinstance(obj, dict):
+                return {k: self._serialize_neo4j_object(v) for k, v in obj.items()}
+            
+            # Try to check for Path-like structure
+            if hasattr(obj, 'segments'):
+                print("Found object with segments attribute")
+                return {
+                    'segments': [
+                        {
+                            'start': self._serialize_node(segment.start) if hasattr(segment, 'start') else None,
+                            'end': self._serialize_node(segment.end) if hasattr(segment, 'end') else None,
+                            'relationship': self._serialize_relationship(segment.relationship) if hasattr(segment, 'relationship') else None
+                        }
+                        for segment in obj.segments
+                    ] if hasattr(obj, 'segments') else [],
+                    'nodes': [self._serialize_node(node) for node in obj.nodes] if hasattr(obj, 'nodes') else [],
+                    'relationships': [self._serialize_relationship(rel) for rel in obj.relationships] if hasattr(obj, 'relationships') else []
+                }
+            
+            # Fallback: stringify unknown types without noisy logging
+            if hasattr(obj, '__dict__'):
+                # Convert attributes to safe values
+                return {k: make_json_safe(v) for k, v in obj.__dict__.items() if not k.startswith('_')}
+            return make_json_safe(obj)
+            
+        except Exception as e:
+            print(f"Error serializing Neo4j object: {e}, type: {type(obj)}")
+            import traceback
+            traceback.print_exc()
+            return str(obj)
+    
+    def _serialize_node(self, node):
+        """Serialize a Neo4j Node object (driver v5 safe)"""
+        try:
+            # Prefer element_id; fall back to identity or string
+            identity = getattr(node, 'element_id', None)
+            if identity is None and hasattr(node, 'identity'):
+                ident = getattr(node, 'identity')
+                identity = ident.toNumber() if hasattr(ident, 'toNumber') else str(ident)
+            if identity is None:
+                identity = str(node)
+
+            # Extract labels and properties defensively
+            labels = list(getattr(node, 'labels', [])) if hasattr(node, 'labels') else []
+            def make_json_safe(value):
+                if value is None or isinstance(value, (str, int, float, bool)):
+                    return value
+                if isinstance(value, list):
+                    return [make_json_safe(v) for v in value]
+                if isinstance(value, dict):
+                    return {k: make_json_safe(v) for k, v in value.items()}
+                if hasattr(value, 'toNumber') and callable(getattr(value, 'toNumber')):
+                    try:
+                        return value.toNumber()
+                    except Exception:
+                        return str(value)
+                return str(value)
+
+            try:
+                properties = {k: make_json_safe(v) for k, v in dict(node).items()}
+            except Exception:
+                raw_props = dict(getattr(node, 'properties', {})) if hasattr(node, 'properties') else {}
+                properties = {k: make_json_safe(v) for k, v in raw_props.items()}
+
+            return {
+                'identity': identity,
+                'labels': labels,
+                'properties': properties
+            }
+        except Exception as e:
+            print(f"Error serializing node: {e}")
+            return {'identity': str(node), 'labels': [], 'properties': {}}
+    
+    def _serialize_relationship(self, rel):
+        """Serialize a Neo4j Relationship object (driver v5 safe)"""
+        try:
+            identity = getattr(rel, 'element_id', None)
+            if identity is None and hasattr(rel, 'identity'):
+                ident = getattr(rel, 'identity')
+                identity = ident.toNumber() if hasattr(ident, 'toNumber') else str(ident)
+
+            rel_type = getattr(rel, 'type', 'UNKNOWN')
+            def make_json_safe(value):
+                if value is None or isinstance(value, (str, int, float, bool)):
+                    return value
+                if isinstance(value, list):
+                    return [make_json_safe(v) for v in value]
+                if isinstance(value, dict):
+                    return {k: make_json_safe(v) for k, v in value.items()}
+                if hasattr(value, 'toNumber') and callable(getattr(value, 'toNumber')):
+                    try:
+                        return value.toNumber()
+                    except Exception:
+                        return str(value)
+                return str(value)
+
+            try:
+                properties = {k: make_json_safe(v) for k, v in dict(rel).items()}
+            except Exception:
+                raw_props = dict(getattr(rel, 'properties', {})) if hasattr(rel, 'properties') else {}
+                properties = {k: make_json_safe(v) for k, v in raw_props.items()}
+
+            # Start/end node ids are not required by frontend, keep if available
+            start_node = getattr(rel, 'start_node', None)
+            end_node = getattr(rel, 'end_node', None)
+            start_id = getattr(start_node, 'element_id', None) if start_node is not None else None
+            end_id = getattr(end_node, 'element_id', None) if end_node is not None else None
+
+            return {
+                'identity': identity if identity is not None else str(rel),
+                'type': rel_type,
+                'properties': properties,
+                'start_node': start_id,
+                'end_node': end_id
+            }
+        except Exception as e:
+            print(f"Error serializing relationship: {e}")
+            return {'identity': str(rel), 'type': 'UNKNOWN', 'properties': {}}
+
+    def _extract_counters(self, counters):
+        """Safely extract counters from Neo4j SummaryCounters object"""
+        try:
+            if hasattr(counters, '__dict__'):
+                return {k: v for k, v in counters.__dict__.items() if not k.startswith('_')}
+            else:
+                # Try to extract common counter attributes
+                counter_dict = {}
+                common_attrs = ['nodes_created', 'nodes_deleted', 'relationships_created', 
+                               'relationships_deleted', 'properties_set', 'labels_added', 'labels_removed']
+                for attr in common_attrs:
+                    if hasattr(counters, attr):
+                        counter_dict[attr] = getattr(counters, attr)
+                return counter_dict
+        except Exception as e:
+            print(f"Error extracting counters: {e}")
+            return {}
 
     def load_mc1_data_default(self):
         """Load MC1 data from the default file location"""

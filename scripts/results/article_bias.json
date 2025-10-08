@@ -1,0 +1,676 @@
+{
+  "summary": {
+    "total_articles": 6,
+    "total_mentions": 338,
+    "average_bias": 0.4858127491432369,
+    "high_bias_articles": 0,
+    "analysis_timestamp": "2024-01-15T10:30:00Z"
+  },
+  "article_comparison": [
+    {
+      "article": "Haacklee Herald",
+      "article_type": "Local News",
+      "total_mentions": 109,
+      "overall_bias": 0.2589312533996735,
+      "sentiment_bias": 0.5871559633027523,
+      "avg_confidence": 0.27370030581039756,
+      "entity_diversity": 0.9836311947753331,
+      "event_diversity": 1,
+      "mention_efficiency": 1.345679012345679,
+      "confidence_efficiency": 29.833333333333336,
+      "risk_level": "Low",
+      "positive_mentions": 48.0,
+      "negative_mentions": 16.0,
+      "neutral_mentions": 45.0
+    },
+    {
+      "article": "Lomark Daily",
+      "article_type": "Daily News",
+      "total_mentions": 107,
+      "overall_bias": 0.26680245398026103,
+      "sentiment_bias": 0.5887850467289719,
+      "avg_confidence": 0.3177570093457944,
+      "entity_diversity": 0.983744739444489,
+      "event_diversity": 1,
+      "mention_efficiency": 1.3209876543209877,
+      "confidence_efficiency": 34.0,
+      "risk_level": "Low",
+      "positive_mentions": 45.0,
+      "negative_mentions": 9.0,
+      "neutral_mentions": 53.0
+    },
+    {
+      "article": "The News Buoy",
+      "article_type": "Maritime News",
+      "total_mentions": 112,
+      "overall_bias": 0.2976390375516027,
+      "sentiment_bias": 0.65625,
+      "avg_confidence": 0.3764880952380953,
+      "entity_diversity": 0.9842750503372247,
+      "event_diversity": 1,
+      "mention_efficiency": 1.302325581395349,
+      "confidence_efficiency": 42.16666666666667,
+      "risk_level": "Low",
+      "positive_mentions": 52.0,
+      "negative_mentions": 9.0,
+      "neutral_mentions": 51.0
+    },
+    {
+      "article": "Haacklee Herald_Police",
+      "article_type": "Local News",
+      "total_mentions": 6,
+      "overall_bias": 0.6915037499278843,
+      "sentiment_bias": 1.5,
+      "avg_confidence": -1.0,
+      "entity_diversity": 0.9591479170272447,
+      "event_diversity": 1,
+      "mention_efficiency": 1.5,
+      "confidence_efficiency": -6.0,
+      "risk_level": "Medium",
+      "positive_mentions": 0.0,
+      "negative_mentions": 6.0,
+      "neutral_mentions": 0.0
+    },
+    {
+      "article": "Lomark Daily_Police",
+      "article_type": "Daily News",
+      "total_mentions": 2,
+      "overall_bias": 0.7,
+      "sentiment_bias": 1.5,
+      "avg_confidence": -1.0,
+      "entity_diversity": 1,
+      "event_diversity": 1,
+      "mention_efficiency": 2.0,
+      "confidence_efficiency": -2.0,
+      "risk_level": "Medium",
+      "positive_mentions": 0.0,
+      "negative_mentions": 2.0,
+      "neutral_mentions": 0.0
+    },
+    {
+      "article": "The News Buoy_Police",
+      "article_type": "Maritime News",
+      "total_mentions": 2,
+      "overall_bias": 0.7,
+      "sentiment_bias": 1.5,
+      "avg_confidence": -1.0,
+      "entity_diversity": 1,
+      "event_diversity": 1,
+      "mention_efficiency": 2.0,
+      "confidence_efficiency": -2.0,
+      "risk_level": "Medium",
+      "positive_mentions": 0.0,
+      "negative_mentions": 2.0,
+      "neutral_mentions": 0.0
+    }
+  ],
+  "top_articles": {
+    "most_mentioned": [
+      {
+        "article": "The News Buoy",
+        "article_type": "Maritime News",
+        "total_mentions": 112,
+        "overall_bias": 0.2976390375516027,
+        "sentiment_bias": 0.65625,
+        "avg_confidence": 0.3764880952380953,
+        "entity_diversity": 0.9842750503372247,
+        "event_diversity": 1,
+        "mention_efficiency": 1.302325581395349,
+        "confidence_efficiency": 42.16666666666667,
+        "risk_level": "Low",
+        "positive_mentions": 52.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 51.0
+      },
+      {
+        "article": "Haacklee Herald",
+        "article_type": "Local News",
+        "total_mentions": 109,
+        "overall_bias": 0.2589312533996735,
+        "sentiment_bias": 0.5871559633027523,
+        "avg_confidence": 0.27370030581039756,
+        "entity_diversity": 0.9836311947753331,
+        "event_diversity": 1,
+        "mention_efficiency": 1.345679012345679,
+        "confidence_efficiency": 29.833333333333336,
+        "risk_level": "Low",
+        "positive_mentions": 48.0,
+        "negative_mentions": 16.0,
+        "neutral_mentions": 45.0
+      },
+      {
+        "article": "Lomark Daily",
+        "article_type": "Daily News",
+        "total_mentions": 107,
+        "overall_bias": 0.26680245398026103,
+        "sentiment_bias": 0.5887850467289719,
+        "avg_confidence": 0.3177570093457944,
+        "entity_diversity": 0.983744739444489,
+        "event_diversity": 1,
+        "mention_efficiency": 1.3209876543209877,
+        "confidence_efficiency": 34.0,
+        "risk_level": "Low",
+        "positive_mentions": 45.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 53.0
+      },
+      {
+        "article": "Haacklee Herald_Police",
+        "article_type": "Local News",
+        "total_mentions": 6,
+        "overall_bias": 0.6915037499278843,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 0.9591479170272447,
+        "event_diversity": 1,
+        "mention_efficiency": 1.5,
+        "confidence_efficiency": -6.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 6.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "Lomark Daily_Police",
+        "article_type": "Daily News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "The News Buoy_Police",
+        "article_type": "Maritime News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      }
+    ],
+    "most_biased": [
+      {
+        "article": "Lomark Daily_Police",
+        "article_type": "Daily News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "The News Buoy_Police",
+        "article_type": "Maritime News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "Haacklee Herald_Police",
+        "article_type": "Local News",
+        "total_mentions": 6,
+        "overall_bias": 0.6915037499278843,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 0.9591479170272447,
+        "event_diversity": 1,
+        "mention_efficiency": 1.5,
+        "confidence_efficiency": -6.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 6.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "The News Buoy",
+        "article_type": "Maritime News",
+        "total_mentions": 112,
+        "overall_bias": 0.2976390375516027,
+        "sentiment_bias": 0.65625,
+        "avg_confidence": 0.3764880952380953,
+        "entity_diversity": 0.9842750503372247,
+        "event_diversity": 1,
+        "mention_efficiency": 1.302325581395349,
+        "confidence_efficiency": 42.16666666666667,
+        "risk_level": "Low",
+        "positive_mentions": 52.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 51.0
+      },
+      {
+        "article": "Lomark Daily",
+        "article_type": "Daily News",
+        "total_mentions": 107,
+        "overall_bias": 0.26680245398026103,
+        "sentiment_bias": 0.5887850467289719,
+        "avg_confidence": 0.3177570093457944,
+        "entity_diversity": 0.983744739444489,
+        "event_diversity": 1,
+        "mention_efficiency": 1.3209876543209877,
+        "confidence_efficiency": 34.0,
+        "risk_level": "Low",
+        "positive_mentions": 45.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 53.0
+      },
+      {
+        "article": "Haacklee Herald",
+        "article_type": "Local News",
+        "total_mentions": 109,
+        "overall_bias": 0.2589312533996735,
+        "sentiment_bias": 0.5871559633027523,
+        "avg_confidence": 0.27370030581039756,
+        "entity_diversity": 0.9836311947753331,
+        "event_diversity": 1,
+        "mention_efficiency": 1.345679012345679,
+        "confidence_efficiency": 29.833333333333336,
+        "risk_level": "Low",
+        "positive_mentions": 48.0,
+        "negative_mentions": 16.0,
+        "neutral_mentions": 45.0
+      }
+    ],
+    "most_confident": [
+      {
+        "article": "The News Buoy",
+        "article_type": "Maritime News",
+        "total_mentions": 112,
+        "overall_bias": 0.2976390375516027,
+        "sentiment_bias": 0.65625,
+        "avg_confidence": 0.3764880952380953,
+        "entity_diversity": 0.9842750503372247,
+        "event_diversity": 1,
+        "mention_efficiency": 1.302325581395349,
+        "confidence_efficiency": 42.16666666666667,
+        "risk_level": "Low",
+        "positive_mentions": 52.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 51.0
+      },
+      {
+        "article": "Lomark Daily",
+        "article_type": "Daily News",
+        "total_mentions": 107,
+        "overall_bias": 0.26680245398026103,
+        "sentiment_bias": 0.5887850467289719,
+        "avg_confidence": 0.3177570093457944,
+        "entity_diversity": 0.983744739444489,
+        "event_diversity": 1,
+        "mention_efficiency": 1.3209876543209877,
+        "confidence_efficiency": 34.0,
+        "risk_level": "Low",
+        "positive_mentions": 45.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 53.0
+      },
+      {
+        "article": "Haacklee Herald",
+        "article_type": "Local News",
+        "total_mentions": 109,
+        "overall_bias": 0.2589312533996735,
+        "sentiment_bias": 0.5871559633027523,
+        "avg_confidence": 0.27370030581039756,
+        "entity_diversity": 0.9836311947753331,
+        "event_diversity": 1,
+        "mention_efficiency": 1.345679012345679,
+        "confidence_efficiency": 29.833333333333336,
+        "risk_level": "Low",
+        "positive_mentions": 48.0,
+        "negative_mentions": 16.0,
+        "neutral_mentions": 45.0
+      },
+      {
+        "article": "Haacklee Herald_Police",
+        "article_type": "Local News",
+        "total_mentions": 6,
+        "overall_bias": 0.6915037499278843,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 0.9591479170272447,
+        "event_diversity": 1,
+        "mention_efficiency": 1.5,
+        "confidence_efficiency": -6.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 6.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "Lomark Daily_Police",
+        "article_type": "Daily News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "The News Buoy_Police",
+        "article_type": "Maritime News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      }
+    ],
+    "most_diverse": [
+      {
+        "article": "Lomark Daily_Police",
+        "article_type": "Daily News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "The News Buoy_Police",
+        "article_type": "Maritime News",
+        "total_mentions": 2,
+        "overall_bias": 0.7,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 1,
+        "event_diversity": 1,
+        "mention_efficiency": 2.0,
+        "confidence_efficiency": -2.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 2.0,
+        "neutral_mentions": 0.0
+      },
+      {
+        "article": "The News Buoy",
+        "article_type": "Maritime News",
+        "total_mentions": 112,
+        "overall_bias": 0.2976390375516027,
+        "sentiment_bias": 0.65625,
+        "avg_confidence": 0.3764880952380953,
+        "entity_diversity": 0.9842750503372247,
+        "event_diversity": 1,
+        "mention_efficiency": 1.302325581395349,
+        "confidence_efficiency": 42.16666666666667,
+        "risk_level": "Low",
+        "positive_mentions": 52.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 51.0
+      },
+      {
+        "article": "Lomark Daily",
+        "article_type": "Daily News",
+        "total_mentions": 107,
+        "overall_bias": 0.26680245398026103,
+        "sentiment_bias": 0.5887850467289719,
+        "avg_confidence": 0.3177570093457944,
+        "entity_diversity": 0.983744739444489,
+        "event_diversity": 1,
+        "mention_efficiency": 1.3209876543209877,
+        "confidence_efficiency": 34.0,
+        "risk_level": "Low",
+        "positive_mentions": 45.0,
+        "negative_mentions": 9.0,
+        "neutral_mentions": 53.0
+      },
+      {
+        "article": "Haacklee Herald",
+        "article_type": "Local News",
+        "total_mentions": 109,
+        "overall_bias": 0.2589312533996735,
+        "sentiment_bias": 0.5871559633027523,
+        "avg_confidence": 0.27370030581039756,
+        "entity_diversity": 0.9836311947753331,
+        "event_diversity": 1,
+        "mention_efficiency": 1.345679012345679,
+        "confidence_efficiency": 29.833333333333336,
+        "risk_level": "Low",
+        "positive_mentions": 48.0,
+        "negative_mentions": 16.0,
+        "neutral_mentions": 45.0
+      },
+      {
+        "article": "Haacklee Herald_Police",
+        "article_type": "Local News",
+        "total_mentions": 6,
+        "overall_bias": 0.6915037499278843,
+        "sentiment_bias": 1.5,
+        "avg_confidence": -1.0,
+        "entity_diversity": 0.9591479170272447,
+        "event_diversity": 1,
+        "mention_efficiency": 1.5,
+        "confidence_efficiency": -6.0,
+        "risk_level": "Medium",
+        "positive_mentions": 0.0,
+        "negative_mentions": 6.0,
+        "neutral_mentions": 0.0
+      }
+    ]
+  },
+  "article_type_statistics": {
+    "Local News": {
+      "count": 2,
+      "total_mentions": 115,
+      "avg_bias": 0.4752175016637789,
+      "high_bias_count": 0
+    },
+    "Daily News": {
+      "count": 2,
+      "total_mentions": 109,
+      "avg_bias": 0.4834012269901305,
+      "high_bias_count": 0
+    },
+    "Maritime News": {
+      "count": 2,
+      "total_mentions": 114,
+      "avg_bias": 0.49881951877580133,
+      "high_bias_count": 0
+    }
+  },
+  "risk_assessment": {
+    "high_risk": 0,
+    "medium_risk": 3,
+    "low_risk": 3
+  },
+  "recommendations": [
+    {
+      "type": "info",
+      "title": "Low Entity Diversity",
+      "description": "6 articles focus on limited entities",
+      "action": "Encourage broader entity coverage for balanced reporting"
+    },
+    {
+      "type": "warning",
+      "title": "Extreme Sentiment Bias",
+      "description": "3 articles show extreme sentiment bias",
+      "action": "Review sentiment balance and ensure neutral reporting"
+    }
+  ],
+  "chart_data": {
+    "article_mentions": {
+      "data": [
+        {
+          "article": "The News Buoy",
+          "mentions": 112
+        },
+        {
+          "article": "Haacklee Herald",
+          "mentions": 109
+        },
+        {
+          "article": "Lomark Daily",
+          "mentions": 107
+        },
+        {
+          "article": "Haacklee Herald_Police",
+          "mentions": 6
+        },
+        {
+          "article": "Lomark Daily_Police",
+          "mentions": 2
+        },
+        {
+          "article": "The News Buoy_Police",
+          "mentions": 2
+        }
+      ]
+    },
+    "bias_scores": {
+      "data": [
+        {
+          "article": "Lomark Daily_Police",
+          "bias": 0.7,
+          "type": "Daily News"
+        },
+        {
+          "article": "The News Buoy_Police",
+          "bias": 0.7,
+          "type": "Maritime News"
+        },
+        {
+          "article": "Haacklee Herald_Police",
+          "bias": 0.6915037499278843,
+          "type": "Local News"
+        },
+        {
+          "article": "The News Buoy",
+          "bias": 0.2976390375516027,
+          "type": "Maritime News"
+        },
+        {
+          "article": "Lomark Daily",
+          "bias": 0.26680245398026103,
+          "type": "Daily News"
+        },
+        {
+          "article": "Haacklee Herald",
+          "bias": 0.2589312533996735,
+          "type": "Local News"
+        }
+      ]
+    },
+    "sentiment_distribution": {
+      "data": [
+        {
+          "type": "Local News",
+          "positive": 34.5,
+          "negative": 23.0,
+          "neutral": 57.5
+        },
+        {
+          "type": "Daily News",
+          "positive": 32.699999999999996,
+          "negative": 21.8,
+          "neutral": 54.5
+        },
+        {
+          "type": "Maritime News",
+          "positive": 34.199999999999996,
+          "negative": 22.8,
+          "neutral": 57.0
+        }
+      ]
+    },
+    "confidence_vs_bias": {
+      "data": [
+        {
+          "confidence": 0.27370030581039756,
+          "bias": 0.2589312533996735,
+          "article": "Haacklee Herald"
+        },
+        {
+          "confidence": 0.3177570093457944,
+          "bias": 0.26680245398026103,
+          "article": "Lomark Daily"
+        },
+        {
+          "confidence": 0.3764880952380953,
+          "bias": 0.2976390375516027,
+          "article": "The News Buoy"
+        },
+        {
+          "confidence": -1.0,
+          "bias": 0.6915037499278843,
+          "article": "Haacklee Herald_Poli"
+        },
+        {
+          "confidence": -1.0,
+          "bias": 0.7,
+          "article": "Lomark Daily_Police"
+        },
+        {
+          "confidence": -1.0,
+          "bias": 0.7,
+          "article": "The News Buoy_Police"
+        }
+      ]
+    },
+    "risk_distribution": {
+      "data": [
+        {
+          "risk": "high_risk",
+          "count": 0
+        },
+        {
+          "risk": "medium_risk",
+          "count": 3
+        },
+        {
+          "risk": "low_risk",
+          "count": 3
+        }
+      ]
+    }
+  }
+}

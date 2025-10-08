@@ -12,8 +12,14 @@ from neo4j_routes import neo4j_bp
 def create_app():
     # Load environment variables from .env if present
     try:
-        load_dotenv()
-    except Exception:
+        # Load .env from project root directory
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(current_dir)
+        env_path = os.path.join(project_root, '.env')
+        load_dotenv(env_path)
+        print(f"Loading .env from: {env_path}")
+    except Exception as e:
+        print(f"Could not load .env file: {e}")
         pass
     app = Flask(__name__)
     CORS(app, origins=['http://localhost:3000', 'http://127.0.0.1:3000'],
@@ -34,6 +40,12 @@ def create_app():
     app.config['NEO4J_URI'] = os.getenv('NEO4J_URI', 'neo4j://127.0.0.1:7687')
     app.config['NEO4J_USER'] = os.getenv('NEO4J_USER', 'neo4j')
     app.config['NEO4J_PASSWORD'] = os.getenv('NEO4J_PASSWORD', 'Veda@123')
+    
+    # Debug: Print loaded configuration
+    print(f"Neo4j Configuration:")
+    print(f"  URI: {app.config['NEO4J_URI']}")
+    print(f"  USER: {app.config['NEO4J_USER']}")
+    print(f"  PASSWORD: {'*' * len(app.config['NEO4J_PASSWORD']) if app.config['NEO4J_PASSWORD'] else 'None'}")
 
     # Init services
     bias_analyzer = BiasAnalyzer()

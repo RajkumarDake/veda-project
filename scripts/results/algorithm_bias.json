@@ -1,0 +1,572 @@
+{
+  "summary": {
+    "total_algorithms": 3,
+    "total_links": 16231,
+    "average_bias": 0.2576329400909616,
+    "high_bias_algorithms": 0,
+    "analysis_timestamp": "2025-10-08T02:47:41.675793"
+  },
+  "algorithm_comparison": [
+    {
+      "algorithm": "BassLine",
+      "link_count": 8309,
+      "overall_bias": 0.31188230566912445,
+      "avg_confidence": 0.5,
+      "confidence_std": 0.0,
+      "event_bias": 0.16056015902803866,
+      "node_bias": 0.15343391942377727,
+      "source_bias": 0.41513737037978704,
+      "event_diversity": 12,
+      "node_diversity": 7,
+      "source_diversity": 9,
+      "events_per_link": 1.0,
+      "nodes_per_link": 1.0,
+      "bias_risk_level": "Medium"
+    },
+    {
+      "algorithm": "ShadGPT",
+      "link_count": 7790,
+      "overall_bias": 0.3105143123101981,
+      "avg_confidence": 0.5,
+      "confidence_std": 0.0,
+      "event_bias": 0.15320425993949816,
+      "node_bias": 0.1539743370502753,
+      "source_bias": 0.41879083459146826,
+      "event_diversity": 12,
+      "node_diversity": 7,
+      "source_diversity": 9,
+      "events_per_link": 1.0,
+      "nodes_per_link": 1.0,
+      "bias_risk_level": "Medium"
+    },
+    {
+      "algorithm": "Unknown",
+      "link_count": 132,
+      "overall_bias": 0.1505022022935623,
+      "avg_confidence": 0.5,
+      "confidence_std": 0.0,
+      "event_bias": 0,
+      "node_bias": 0.002511011467811519,
+      "source_bias": 0,
+      "event_diversity": 1,
+      "node_diversity": 3,
+      "source_diversity": 1,
+      "events_per_link": 1.0,
+      "nodes_per_link": 1.0,
+      "bias_risk_level": "Low"
+    }
+  ],
+  "bias_metrics": {
+    "BassLine": {
+      "link_count": 8309,
+      "avg_confidence": 0.5,
+      "confidence_std": 0.0,
+      "confidence_bias": 0.5,
+      "event_bias": 0.16056015902803866,
+      "node_bias": 0.15343391942377727,
+      "source_bias": 0.41513737037978704,
+      "overall_bias": 0.31188230566912445,
+      "event_distribution": {
+        "Event.Invest": 0.2722349259838729,
+        "Event.Aid": 0.07100734143699602,
+        "Event.Transaction": 0.2020700445300277,
+        "Event.Fishing.SustainableFishing": 0.09014321819713564,
+        "Event.Fishing": 0.09122638103261524,
+        "Event.Communication.Conference": 0.05030689613671922,
+        "Event.Criticize": 0.02382958238055121,
+        "Event.Fishing.OverFishing": 0.10494644361535684,
+        "Event.Applaud": 0.012877602599590806,
+        "Event.CertificateIssued.Summons": 0.06547117583343362,
+        "Event.Convicted": 0.004091948489589601,
+        "Event.CertificateIssued": 0.011794439764111205
+      },
+      "node_distribution": {
+        "Entity.Commodity": 0.2722349259838729,
+        "Entity.Organization": 0.07100734143699602,
+        "Entity.Organization.FishingCompany": 0.2035142616440005,
+        "Entity.Location.Region": 0.2863160428451077,
+        "Entity.Organization.Company": 0.12408232037549645,
+        "Entity.Organization.NGO": 0.02419063665904441,
+        "Entity.Organization.LogisticsCompany": 0.018654471055482007
+      },
+      "source_distribution": {
+        "Haacklee Herald": 0.3194126850403177,
+        "Lomark Daily": 0.3105066795041521,
+        "The News Buoy": 0.33120712480442893,
+        "Paackland Police Reports": 0.012877602599590806,
+        "South Paackland Police Reports": 0.006860031291370802,
+        "Centralia Police Reports": 0.007582139848357203,
+        "Lomark Police Reports": 0.004212299915754001,
+        "Himark Police Reports": 0.0032494885064388015,
+        "Port Grove Police Reports": 0.004091948489589601
+      },
+      "event_types": {
+        "Event.Invest": 2262,
+        "Event.Aid": 590,
+        "Event.Transaction": 1679,
+        "Event.Fishing.SustainableFishing": 749,
+        "Event.Fishing": 758,
+        "Event.Communication.Conference": 418,
+        "Event.Criticize": 198,
+        "Event.Fishing.OverFishing": 872,
+        "Event.Applaud": 107,
+        "Event.CertificateIssued.Summons": 544,
+        "Event.Convicted": 34,
+        "Event.CertificateIssued": 98
+      },
+      "target_types": {
+        "Entity.Commodity": 2262,
+        "Entity.Organization": 590,
+        "Entity.Organization.FishingCompany": 1691,
+        "Entity.Location.Region": 2379,
+        "Entity.Organization.Company": 1031,
+        "Entity.Organization.NGO": 201,
+        "Entity.Organization.LogisticsCompany": 155
+      },
+      "sources": {
+        "Haacklee Herald": 2654,
+        "Lomark Daily": 2580,
+        "The News Buoy": 2752,
+        "Paackland Police Reports": 107,
+        "South Paackland Police Reports": 57,
+        "Centralia Police Reports": 63,
+        "Lomark Police Reports": 35,
+        "Himark Police Reports": 27,
+        "Port Grove Police Reports": 34
+      }
+    },
+    "ShadGPT": {
+      "link_count": 7790,
+      "avg_confidence": 0.5,
+      "confidence_std": 0.0,
+      "confidence_bias": 0.5,
+      "event_bias": 0.15320425993949816,
+      "node_bias": 0.1539743370502753,
+      "source_bias": 0.41879083459146826,
+      "overall_bias": 0.3105143123101981,
+      "event_distribution": {
+        "Event.Invest": 0.2711168164313222,
+        "Event.Aid": 0.06957637997432606,
+        "Event.Transaction": 0.20218228498074453,
+        "Event.Fishing.SustainableFishing": 0.08433889602053915,
+        "Event.Fishing": 0.09293966623876765,
+        "Event.Communication.Conference": 0.04865211810012837,
+        "Event.Fishing.OverFishing": 0.10089858793324775,
+        "Event.Criticize": 0.026059050064184852,
+        "Event.Applaud": 0.016174582798459562,
+        "Event.CertificateIssued": 0.016174582798459562,
+        "Event.CertificateIssued.Summons": 0.06765083440308087,
+        "Event.Convicted": 0.004236200256739409
+      },
+      "node_distribution": {
+        "Entity.Commodity": 0.2711168164313222,
+        "Entity.Organization": 0.06957637997432606,
+        "Entity.Organization.FishingCompany": 0.21797175866495508,
+        "Entity.Location.Region": 0.27817715019255457,
+        "Entity.Organization.Company": 0.12002567394094994,
+        "Entity.Organization.NGO": 0.026059050064184852,
+        "Entity.Organization.LogisticsCompany": 0.01707317073170732
+      },
+      "source_distribution": {
+        "Lomark Daily": 0.32195121951219513,
+        "The News Buoy": 0.33697047496790755,
+        "Haacklee Herald": 0.30474967907573813,
+        "Paackland Police Reports": 0.009499358151476251,
+        "South Paackland Police Reports": 0.007445442875481386,
+        "Centralia Police Reports": 0.006803594351732991,
+        "Lomark Police Reports": 0.003722721437740693,
+        "Himark Police Reports": 0.0043645699614890884,
+        "Port Grove Police Reports": 0.004492939666238768
+      },
+      "event_types": {
+        "Event.Invest": 2112,
+        "Event.Aid": 542,
+        "Event.Transaction": 1575,
+        "Event.Fishing.SustainableFishing": 657,
+        "Event.Fishing": 724,
+        "Event.Communication.Conference": 379,
+        "Event.Fishing.OverFishing": 786,
+        "Event.Criticize": 203,
+        "Event.Applaud": 126,
+        "Event.CertificateIssued": 126,
+        "Event.CertificateIssued.Summons": 527,
+        "Event.Convicted": 33
+      },
+      "target_types": {
+        "Entity.Commodity": 2112,
+        "Entity.Organization": 542,
+        "Entity.Organization.FishingCompany": 1698,
+        "Entity.Location.Region": 2167,
+        "Entity.Organization.Company": 935,
+        "Entity.Organization.NGO": 203,
+        "Entity.Organization.LogisticsCompany": 133
+      },
+      "sources": {
+        "Lomark Daily": 2508,
+        "The News Buoy": 2625,
+        "Haacklee Herald": 2374,
+        "Paackland Police Reports": 74,
+        "South Paackland Police Reports": 58,
+        "Centralia Police Reports": 53,
+        "Lomark Police Reports": 29,
+        "Himark Police Reports": 34,
+        "Port Grove Police Reports": 35
+      }
+    },
+    "Unknown": {
+      "link_count": 132,
+      "avg_confidence": 0.5,
+      "confidence_std": 0.0,
+      "confidence_bias": 0.5,
+      "event_bias": 0,
+      "node_bias": 0.002511011467811519,
+      "source_bias": 0,
+      "overall_bias": 0.1505022022935623,
+      "event_distribution": {
+        "Event.Owns.PartiallyOwns": 1.0
+      },
+      "node_distribution": {
+        "Entity.Organization.Company": 0.30303030303030304,
+        "Entity.Organization.FishingCompany": 0.36363636363636365,
+        "Entity.Organization.LogisticsCompany": 0.3333333333333333
+      },
+      "source_distribution": {
+        "Unknown": 1.0
+      },
+      "event_types": {
+        "Event.Owns.PartiallyOwns": 132
+      },
+      "target_types": {
+        "Entity.Organization.Company": 40,
+        "Entity.Organization.FishingCompany": 48,
+        "Entity.Organization.LogisticsCompany": 44
+      },
+      "sources": {
+        "Unknown": 132
+      }
+    }
+  },
+  "top_algorithms": {
+    "by_links": [
+      {
+        "algorithm": "BassLine",
+        "link_count": 8309,
+        "overall_bias": 0.31188230566912445,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.16056015902803866,
+        "node_bias": 0.15343391942377727,
+        "source_bias": 0.41513737037978704,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "ShadGPT",
+        "link_count": 7790,
+        "overall_bias": 0.3105143123101981,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.15320425993949816,
+        "node_bias": 0.1539743370502753,
+        "source_bias": 0.41879083459146826,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "Unknown",
+        "link_count": 132,
+        "overall_bias": 0.1505022022935623,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0,
+        "node_bias": 0.002511011467811519,
+        "source_bias": 0,
+        "event_diversity": 1,
+        "node_diversity": 3,
+        "source_diversity": 1,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Low"
+      }
+    ],
+    "by_bias": [
+      {
+        "algorithm": "BassLine",
+        "link_count": 8309,
+        "overall_bias": 0.31188230566912445,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.16056015902803866,
+        "node_bias": 0.15343391942377727,
+        "source_bias": 0.41513737037978704,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "ShadGPT",
+        "link_count": 7790,
+        "overall_bias": 0.3105143123101981,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.15320425993949816,
+        "node_bias": 0.1539743370502753,
+        "source_bias": 0.41879083459146826,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "Unknown",
+        "link_count": 132,
+        "overall_bias": 0.1505022022935623,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0,
+        "node_bias": 0.002511011467811519,
+        "source_bias": 0,
+        "event_diversity": 1,
+        "node_diversity": 3,
+        "source_diversity": 1,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Low"
+      }
+    ],
+    "by_confidence": [
+      {
+        "algorithm": "BassLine",
+        "link_count": 8309,
+        "overall_bias": 0.31188230566912445,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.16056015902803866,
+        "node_bias": 0.15343391942377727,
+        "source_bias": 0.41513737037978704,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "ShadGPT",
+        "link_count": 7790,
+        "overall_bias": 0.3105143123101981,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.15320425993949816,
+        "node_bias": 0.1539743370502753,
+        "source_bias": 0.41879083459146826,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "Unknown",
+        "link_count": 132,
+        "overall_bias": 0.1505022022935623,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0,
+        "node_bias": 0.002511011467811519,
+        "source_bias": 0,
+        "event_diversity": 1,
+        "node_diversity": 3,
+        "source_diversity": 1,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Low"
+      }
+    ]
+  },
+  "global_distributions": {
+    "event_types": {
+      "Event.Invest": 4374,
+      "Event.Aid": 1132,
+      "Event.Transaction": 3254,
+      "Event.Fishing.SustainableFishing": 1406,
+      "Event.Fishing": 1482,
+      "Event.Communication.Conference": 797,
+      "Event.Criticize": 401,
+      "Event.Fishing.OverFishing": 1658,
+      "Event.Applaud": 233,
+      "Event.CertificateIssued.Summons": 1071,
+      "Event.Convicted": 67,
+      "Event.CertificateIssued": 224,
+      "Event.Owns.PartiallyOwns": 132
+    },
+    "node_types": {
+      "Entity.Commodity": 4374,
+      "Entity.Organization": 1132,
+      "Entity.Organization.FishingCompany": 3437,
+      "Entity.Location.Region": 4546,
+      "Entity.Organization.Company": 2006,
+      "Entity.Organization.NGO": 404,
+      "Entity.Organization.LogisticsCompany": 332
+    },
+    "sources": {
+      "Haacklee Herald": 5028,
+      "Lomark Daily": 5088,
+      "The News Buoy": 5377,
+      "Paackland Police Reports": 181,
+      "South Paackland Police Reports": 115,
+      "Centralia Police Reports": 116,
+      "Lomark Police Reports": 64,
+      "Himark Police Reports": 61,
+      "Port Grove Police Reports": 69,
+      "Unknown": 132
+    }
+  },
+  "risk_assessment": {
+    "high_risk": [],
+    "medium_risk": [
+      {
+        "algorithm": "BassLine",
+        "link_count": 8309,
+        "overall_bias": 0.31188230566912445,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.16056015902803866,
+        "node_bias": 0.15343391942377727,
+        "source_bias": 0.41513737037978704,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      },
+      {
+        "algorithm": "ShadGPT",
+        "link_count": 7790,
+        "overall_bias": 0.3105143123101981,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0.15320425993949816,
+        "node_bias": 0.1539743370502753,
+        "source_bias": 0.41879083459146826,
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Medium"
+      }
+    ],
+    "low_risk": [
+      {
+        "algorithm": "Unknown",
+        "link_count": 132,
+        "overall_bias": 0.1505022022935623,
+        "avg_confidence": 0.5,
+        "confidence_std": 0.0,
+        "event_bias": 0,
+        "node_bias": 0.002511011467811519,
+        "source_bias": 0,
+        "event_diversity": 1,
+        "node_diversity": 3,
+        "source_diversity": 1,
+        "events_per_link": 1.0,
+        "nodes_per_link": 1.0,
+        "bias_risk_level": "Low"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "algorithm": "BassLine",
+      "priority": "Medium",
+      "issue": "Moderate bias detected",
+      "suggestion": "Monitor performance and consider bias mitigation"
+    },
+    {
+      "algorithm": "ShadGPT",
+      "priority": "Medium",
+      "issue": "Moderate bias detected",
+      "suggestion": "Monitor performance and consider bias mitigation"
+    }
+  ],
+  "charts_data": {
+    "link_distribution": [
+      {
+        "algorithm": "BassLine",
+        "links": 8309
+      },
+      {
+        "algorithm": "ShadGPT",
+        "links": 7790
+      },
+      {
+        "algorithm": "Unknown",
+        "links": 132
+      }
+    ],
+    "bias_scores": [
+      {
+        "algorithm": "BassLine",
+        "bias": 0.31188230566912445
+      },
+      {
+        "algorithm": "ShadGPT",
+        "bias": 0.3105143123101981
+      },
+      {
+        "algorithm": "Unknown",
+        "bias": 0.1505022022935623
+      }
+    ],
+    "confidence_scores": [
+      {
+        "algorithm": "BassLine",
+        "confidence": 0.5
+      },
+      {
+        "algorithm": "ShadGPT",
+        "confidence": 0.5
+      },
+      {
+        "algorithm": "Unknown",
+        "confidence": 0.5
+      }
+    ],
+    "diversity_metrics": [
+      {
+        "algorithm": "BassLine",
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9
+      },
+      {
+        "algorithm": "ShadGPT",
+        "event_diversity": 12,
+        "node_diversity": 7,
+        "source_diversity": 9
+      },
+      {
+        "algorithm": "Unknown",
+        "event_diversity": 1,
+        "node_diversity": 3,
+        "source_diversity": 1
+      }
+    ]
+  }
+}

@@ -160,9 +160,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis }) => {
           border: '1px solid #e2e8f0',
           marginBottom: '24px'
         }}>
-          <h3 style={{ color: '#1a202c', marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>
-            📰 News Source Bias Detection
-          </h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: '#1a202c', 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#fef3c7';
+                e.target.style.borderColor = '#f59e0b';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(245, 158, 11, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              📰 News Source Bias Detection
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#f59e0b',
+                fontWeight: '500',
+                background: 'rgba(245, 158, 11, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)',
+              border: '1px solid #fed7aa',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>📰</span>
+                News Source Bias Detection
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Analyzes bias patterns in news sources using sentiment analysis and reliability metrics.
+              </div>
+              <div style={{ 
+                background: 'rgba(245, 158, 11, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(245, 158, 11, 0.1)',
+                marginBottom: '8px'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                  🧮 BIAS SCORE FORMULA
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                  Bias Score = (|Positive Sentiment - Negative Sentiment| / Total Articles) × Reliability Weight
+                </div>
+              </div>
+              <div style={{ 
+                background: 'rgba(245, 158, 11, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(245, 158, 11, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#f59e0b', marginBottom: '4px' }}>
+                  📊 RELIABILITY FORMULA
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                  Reliability = 1 - (Suspicious Patterns / Total Articles) × Consistency Factor
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ marginBottom: '16px', color: '#6B7280', fontSize: '0.875rem' }}>
             Detected {detectSourceBias.length} sources with bias score above {(detectionThreshold * 100).toFixed(0)}%
           </div>
@@ -200,9 +309,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis }) => {
           border: '1px solid #e2e8f0',
           marginBottom: '24px'
         }}>
-          <h3 style={{ color: '#1a202c', marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>
-            🤖 Algorithm Bias Detection
-          </h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: '#1a202c', 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#e0f2fe';
+                e.target.style.borderColor = '#0ea5e9';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(14, 165, 233, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🤖 Algorithm Bias Detection
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#0ea5e9',
+                fontWeight: '500',
+                background: 'rgba(14, 165, 233, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)',
+              border: '1px solid #bae6fd',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🤖</span>
+                Algorithm Bias Detection
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Scatter plot analysis of algorithm performance vs bias scores to identify algorithmic fairness issues.
+              </div>
+              <div style={{ 
+                background: 'rgba(14, 165, 233, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(14, 165, 233, 0.1)',
+                marginBottom: '8px'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#0ea5e9', marginBottom: '4px' }}>
+                  🧮 ALGORITHM BIAS FORMULA
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                  Algorithm Bias = (False Positives / Total Predictions) × (1 - Coverage) × Accuracy Weight
+                </div>
+              </div>
+              <div style={{ 
+                background: 'rgba(14, 165, 233, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(14, 165, 233, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#0ea5e9', marginBottom: '4px' }}>
+                  📊 SCATTER PLOT AXES
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                  X-axis: Accuracy Score | Y-axis: Bias Score | Size: Coverage Percentage
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ marginBottom: '16px', color: '#6B7280', fontSize: '0.875rem' }}>
             Detected {detectAlgorithmBias.length} algorithms with bias score above {(detectionThreshold * 100).toFixed(0)}%
           </div>
@@ -238,9 +456,118 @@ const BiasDetection = ({ mc1Data, mc1BiasAnalysis }) => {
           border: '1px solid #e2e8f0',
           marginBottom: '24px'
         }}>
-          <h3 style={{ color: '#1a202c', marginBottom: '16px', fontSize: '1.25rem', fontWeight: '600' }}>
-            🏢 Entity Coverage Bias Detection
-          </h3>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <h3 
+              style={{ 
+                color: '#1a202c', 
+                marginBottom: '16px', 
+                fontSize: '1.25rem', 
+                fontWeight: '600',
+                cursor: 'help',
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#ecfdf5';
+                e.target.style.borderColor = '#10b981';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.15)';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'block';
+                  tooltip.style.opacity = '1';
+                  tooltip.style.transform = 'translateY(0)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = 'transparent';
+                e.target.style.borderColor = 'transparent';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                const tooltip = e.target.nextElementSibling;
+                if (tooltip) {
+                  tooltip.style.display = 'none';
+                  tooltip.style.opacity = '0';
+                  tooltip.style.transform = 'translateY(-10px)';
+                }
+              }}
+            >
+              🏢 Entity Coverage Bias Detection
+              <span style={{
+                marginLeft: '8px',
+                fontSize: '0.8rem',
+                color: '#10b981',
+                fontWeight: '500',
+                background: 'rgba(16, 185, 129, 0.1)',
+                padding: '2px 6px',
+                borderRadius: '4px'
+              }}>ℹ️</span>
+            </h3>
+            <div style={{
+              position: 'absolute',
+              top: '100%',
+              left: '0',
+              zIndex: 1000,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+              border: '1px solid #bbf7d0',
+              borderRadius: '12px',
+              padding: '16px',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              maxWidth: '450px',
+              minWidth: '350px',
+              display: 'none',
+              opacity: '0',
+              transform: 'translateY(-10px)',
+              transition: 'all 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ 
+                fontSize: '0.9rem', 
+                fontWeight: '600', 
+                color: '#1f2937', 
+                marginBottom: '8px',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                <span style={{ marginRight: '8px', fontSize: '1.1rem' }}>🏢</span>
+                Entity Coverage Bias Detection
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: '1.5', marginBottom: '12px' }}>
+                Area chart analysis showing bias in entity coverage patterns across different companies and organizations.
+              </div>
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(16, 185, 129, 0.1)',
+                marginBottom: '8px'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                  🧮 ENTITY BIAS FORMULA
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                  Entity Bias = |Positive Ratio - Negative Ratio| × (Mentions / Max Mentions) × Coverage Weight
+                </div>
+              </div>
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.05)', 
+                padding: '8px 12px', 
+                borderRadius: '6px',
+                border: '1px solid rgba(16, 185, 129, 0.1)'
+              }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#10b981', marginBottom: '4px' }}>
+                  📊 AREA CHART METRICS
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#1f2937', fontFamily: 'monospace' }}>
+                  X-axis: Company Names | Y-axis: Bias Score | Area: Coverage Intensity
+                </div>
+              </div>
+            </div>
+          </div>
           <div style={{ marginBottom: '16px', color: '#6B7280', fontSize: '0.875rem' }}>
             Detected {detectCompanyBias.length} entities with bias score above {(detectionThreshold * 100).toFixed(0)}%
           </div>
