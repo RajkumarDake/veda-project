@@ -72,6 +72,14 @@ const Dashboard = ({ onNavigate, data, loading, onProcessArticles, onLoadMC1Data
       buttonText: 'Explore Network',
       buttonClass: 'button-outline-primary',
       onClick: () => onNavigate('network-view'),
+    },
+    {
+      title: 'Graph Exploration',
+      image: CardImage1,
+      description: 'Explore specific paths in the knowledge graph using Start Node → Relationship → End Node interface.',
+      buttonText: 'Explore Paths',
+      buttonClass: 'button-outline-primary',
+      onClick: () => onNavigate('graph-exploration'),
     }
   ];
 

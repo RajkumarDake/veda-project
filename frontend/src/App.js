@@ -27,6 +27,7 @@ import AdvancedAnalyticsPage from './pages/AdvancedAnalyticsPage';
 import AlgorithmBiasPage from './pages/AlgorithmBiasPage';
 import SentimentAnalysisPage from './pages/SentimentAnalysisPage';
 import NetworkView from './components/NetworkView';
+import GraphExploration from './components/GraphExploration';
 import './App.css';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
@@ -226,6 +227,7 @@ function AppContent() {
       'advanced-analytics': '/advanced-analytics',
       'sentiment-analysis': '/sentiment-analysis',
       'network-view': '/network-view',
+      'graph-exploration': '/graph-exploration',
       'algorithm-bias': '/algorithm-bias'
     };
     
@@ -294,6 +296,7 @@ function AppContent() {
           <Route path="/advanced-analytics" element={<AdvancedAnalyticsPage data={data} loading={loading} mc1Statistics={data.mc1Statistics} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
           <Route path="/sentiment-analysis" element={<SentimentAnalysisPage data={data} loading={loading} mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
           <Route path="/network-view" element={<NetworkView />} />
+          <Route path="/graph-exploration" element={<GraphExploration />} />
           <Route path="/algorithm-bias" element={<AlgorithmBiasPage mc1BiasAnalysis={data.mc1BiasAnalysis} />} />
         </Routes>
       </div>
